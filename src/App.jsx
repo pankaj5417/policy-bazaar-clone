@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Home from "./Components/Home/Home";
 import "./App.css";
 
 function App() {
@@ -6,7 +7,7 @@ function App() {
     <div className="App">
       <Routes>
         {/* all public and private routes be declared here*/}
-        <Route path="/" element={<h1>Welcome to home page</h1>}></Route>
+        <Route path="/" element={<Home />}></Route>
       </Routes>
     </div>
   );
