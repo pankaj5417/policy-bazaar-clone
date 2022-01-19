@@ -3,12 +3,13 @@ import TextField from "@mui/material/TextField";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Button from '@mui/material/Button';
-
+import Switch from '@mui/material/Switch';
 
 import React from "react";
 import("./Details.css");
 
 const Details = () => {
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
   const [alignment, setAlignment] = React.useState('web');
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -76,7 +77,7 @@ const Details = () => {
               placeholder="DD/MM/YYYY"
             />
             <TextField
-              maxlength="10"
+              maxLength="10"
               type = "Number"
               className="Name"
               label="Mobile Number"
@@ -86,6 +87,19 @@ const Details = () => {
             <br />
             <Button variant="contained" className="Button" >View Free Quotes →</Button>
           </form>
+           <div className="secure">
+             <img src="https://termlife.policybazaar.com/assets/images/lock.svg" alt=""/>
+              Your personal information is secure with us
+           </div>
+           <br />
+           <div className="policy">
+               By clicking, you agree to our <span>Privacy policy</span>,Terms of Use & + <span>Disclaimers</span>
+           </div>
+           <div className="whts">
+            <img src="https://static.pbcdn.in/term-cdn/images/images/term_whatsapp.svg" alt="" />
+            <span>Get updates on WhatsApp</span>   
+            <Switch {...label} />
+           </div>
         </div>
       </div>
     </div>
@@ -93,6 +107,8 @@ const Details = () => {
 };
 
 export default Details;
+
+
 
 
 
