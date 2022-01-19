@@ -1,30 +1,39 @@
 // import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import Button from '@mui/material/Button';
+
 
 import React from "react";
 import("./Details.css");
 
 const Details = () => {
+  const [alignment, setAlignment] = React.useState('web');
+  const handleChange = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
   return (
     <div className="main">
       <div className="navbar">
         <div className="first">
           <img src="policylogo.png" alt="Policy Bazaar" />
         </div>
-        <img className="hand" src="money.png" />
+        <img className="hand" src="money.png" alt="" />
         <span className="claim">Claim Assistance</span>
         <img
           className="call"
           src="https://img.icons8.com/external-kmg-design-basic-outline-kmg-design/32/4a90e2/external-headphone-business-management-kmg-design-basic-outline-kmg-design.png"
           width="25"
           height="25"
+          alt=""
         />
         <span className="claim"> Call us</span>
       </div>
       <div className="form">
         <div className="left">
           <div className="img-b">
-            <img src="https://termlife.policybazaar.com/assets/images/akshayimg.png" />
+            <img src="https://termlife.policybazaar.com/assets/images/akshayimg.png" alt="img" />
           </div>
         </div>
         <div className="right">
@@ -44,10 +53,38 @@ const Details = () => {
           </div>
 
           <form className="forms">
-          <TextField className="Name" label="Full Name" variant="outlined" placeholder="Enter Your Name" />
-          <TextField className="Name" label="Date of Birth" variant="outlined" placeholder="DD/MM/YYYY" />
-          <TextField className="Name" label="Full Name" variant="outlined" placeholder="Enter Your Name" />
-          
+              <ToggleButtonGroup
+                color="primary"
+                value={alignment}
+                exclusive
+                onChange={handleChange}
+              >
+              <ToggleButton value="male">Male</ToggleButton>
+              <ToggleButton value="female" className="female-btn">FeMale</ToggleButton>
+              </ToggleButtonGroup>
+            <br />
+            <TextField
+              className="Name"
+              label="Full Name"
+              variant="outlined"
+              placeholder="Enter Your Name"
+            />
+            <TextField
+              className="Name"
+              label="Date of Birth"
+              variant="outlined"
+              placeholder="DD/MM/YYYY"
+            />
+            <TextField
+              maxlength="10"
+              type = "Number"
+              className="Name"
+              label="Mobile Number"
+              variant="outlined"
+              placeholder="Your Mobile Number"
+            />
+            <br />
+            <Button variant="contained" className="Button" >View Free Quotes →</Button>
           </form>
         </div>
       </div>
@@ -56,3 +93,6 @@ const Details = () => {
 };
 
 export default Details;
+
+
+

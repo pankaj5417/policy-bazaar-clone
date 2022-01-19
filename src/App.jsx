@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import "./App.css";
+import Details from "./Components/TermlifeInsurance/Details";
 
 function App() {
   return (
     <div className="App">
+      <Details />
       <Routes>
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
