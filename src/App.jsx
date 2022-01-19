@@ -1,14 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import "./App.css";
+import Navbar from "./Components/TermlifeInsurance/Navbar";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
+      <Navbar />
+      {/* <Routes> */}
         {/* all public and private routes be declared here*/}
-        <Route path="/" element={<Home />}></Route>
-      </Routes>
+        {/* <Route path="/" element={<Home />}></Route>
+      </Routes> */}
     </div>
   );
 }
