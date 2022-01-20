@@ -1,0 +1,111 @@
+.card {
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    min-height: 100px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.card > div {
+    border-right: 1px solid grey;
+    flex-basis: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    width: 20%;
+}
+
+.card > div > * {
+    align-items: center;
+    justify-content: center;
+}
+
+.card > div p {
+    color: black;
+    font-size: 11px;
+    margin:0px;
+}
+
+.card > div .planDetails {
+    color: #0065ff;
+    background: transparent linear-gradient(
+        91deg
+        ,#eaf2ff,#fff) 0 0 no-repeat;
+
+    width:  fit-content;
+    padding: 4px 10px;
+    font-size: 11px;
+    margin: 3px auto;
+    border-radius: 4px;
+} 
+
+.card > div .planDetails:hover { 
+    text-decoration: underline;
+}
+
+.card  .insurerLogo {
+    width: 100px;
+}
+
+.card .claimSettlement {
+    display: flex;
+    margin-top: 10px;
+}
+
+.card > div > h6 {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 3px 0px;
+    margin-top: 25px;
+}
+
+.card .price {
+    width: 27%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .priceBtn{
+    width: 130px;
+    background: #ff4500 !important;
+    padding: 6px 10px;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: auto;
+    margin-top:25px;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.card .priceBtn h4 {
+    margin: 0px;
+}
+
+.card > .price p {
+    font-size: 10px;
+    margin: 3px 0px;
+}
+
+.medicalIns {
+    display: flex;
+    background: rgb(236, 236, 236);
+    color: rgb(85, 94, 104) !important;
+    font-size: 11px;
+    border-top-left-radius: 70px;
+    border-top-right-radius: 70px;
+    position: absolute;
+    bottom:0;
+    margin: auto;
+    left:37%;
+    padding:0;
+    height:0px;
+}
+
+
