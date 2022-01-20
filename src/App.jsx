@@ -7,14 +7,14 @@ import UseForm from "./Components/userForm/UseForm";
 function App() {
   return (
     <div className="App">
-      
+      {/* <Details /> */}
       <Routes>
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
         <Route path="/details" element={<Details /> }></Route>
 
         <Route path="/user" element={<UseForm /> }></Route>
-
+         <Route path="/lifeinsurance" element={<Details /> }></Route>
       </Routes>
     </div>
   );
