@@ -19,6 +19,7 @@ import {TextField,
     const useStyles = makeStyles((theme) => ({
         inputField: {
           width: "100%",
+
           margin: theme.spacing(1, 0),
         },
         formControl: {
@@ -220,25 +221,32 @@ const MenuProps = {
 
 
         <div className="form-right-container">
-        <div className="ui form">
+       
         <h1>Your Details</h1>
-          <div className="field">
-           
+         
+          
+        <div className="field">
             <TextField
+            id="standard-basic" 
+            label="Full Name as per your ID Proof"
               type="text"
               name="username"
-              placeholder="Full Name as per your ID Proof"
+             // placeholder="Full Name as per your ID Proof"
               value={formValues.username}
               onChange={handleChange}
             />
-          </div>
+               </div>
+          
+       
           <p>{formErrors.username}</p>
           <div className="field">
             
             <TextField
+            id="standard-basic" 
+            label="Email Address"
               type="text"
               name="email"
-              placeholder="Email Address"
+             // placeholder="Email Address"
               value={formValues.email}
               onChange={handleChange}
             />
@@ -247,9 +255,11 @@ const MenuProps = {
           <div className="field">
             
             <TextField
+            id="standard-basic" 
+            label="Annual Income"
               type="number"
               name="income"
-              placeholder="Annual Income"
+             // placeholder="Annual Income"
               value={formValues.income}
               onChange={handleChange}
             />
@@ -284,7 +294,7 @@ const MenuProps = {
          
           <Button className="fluid ui button blue">Proceed</Button>
         </div>
-        </div>
+      
       </form>
     </div>
   );
