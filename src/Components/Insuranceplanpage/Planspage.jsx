@@ -1,23 +1,54 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components"
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 const Planspage = () => {
-  return <div className = "main">
+    const [age, setAge] = React.useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+  return (
+    <div className="main">
       <div className="navbar">
-        <div className="first">
+        <div>
           <img src="policylogo.png" alt="Policy Bazaar" />
         </div>
-        <img className="hand" src="money.png" alt="" />
-        <span className="claim">Claim Assistance</span>
-        <img
-          className="call"
-          src="https://img.icons8.com/external-kmg-design-basic-outline-kmg-design/32/4a90e2/external-headphone-business-management-kmg-design-basic-outline-kmg-design.png"
-          width="25"
-          height="25"
-          alt=""
-        />
-        <span className="claim"> Call us</span>
+        <Nav>
+          <div>
+          <UL>
+            <li>Male |</li>
+            <li>21 yrs |</li>
+            <li>Non-Smoker |</li>
+            <li>10-15lac |</li>
+            <span style={{color:"blue"}}>Edit</span>
+          </UL>
+          </div>
+          <div>
+          <UL>
+            <li>Male |</li>
+            <li>21 yrs |</li>
+            <li>Non-Smoker |</li>
+            <li>10-15lac |</li>
+            {/* <span style={{color:"blue"}}>Edit</span> */}
+          </UL>
+          </div>
+        </Nav>
       </div>
-  </div>;
+    </div>
+  );
 };
+
+const UL = styled.ul`
+list-Style: none;
+display:felx;`
+
+const Nav = styled.div`
+display: flex;
+justify-content:flex-end;`
 
 export default Planspage;
