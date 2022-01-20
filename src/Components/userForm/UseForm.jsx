@@ -9,7 +9,6 @@ import {TextField,
     RadioGroup,
     Radio,
     InputLabel,
-    Switch,
     Select,
     MenuItem,
     Button,} from '@material-ui/core';
