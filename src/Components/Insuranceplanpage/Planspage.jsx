@@ -66,6 +66,12 @@ export const PlansPageHeader = () => {
             All at one go
           </span>
         </Middle>
+        <Last>
+            <div>
+         <input type="checkbox" id="check" />
+          <label for = "check" >Save upto</label>
+            </div>
+        </Last>
       </Navbar2>
     </div>
   );
@@ -82,7 +88,7 @@ const UL = styled.ul`
   padding: 0px 35px;
   font-size: 13px;
   li {
-    padding: 0px 10px;
+    padding: 0px 5px;
   }
 `;
 
@@ -117,8 +123,10 @@ const Navbar2 = styled.div`
   box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
   display: flex;
   box-sizing: border-box;
+  justify-content: space-between;
   z-index: 999;
   top: 2px;
+  
 `;
 
 const CHECKBOX = styled.div`
@@ -139,10 +147,27 @@ const CHECKBOX = styled.div`
   }
 `;
 const Middle = styled.div`
-  margin-left: 5%;
   align-items: center;
   display: flex;
   font-size: 13px;
   justify-content: center;
 `;
+
+const Last = styled.div`
+width: 100px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-right : 7%;
+padding: 10px;
+ label{
+    border : 1px solid orange;
+    display: flex;
+    width:100%;
+    color: orange;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+`
 
