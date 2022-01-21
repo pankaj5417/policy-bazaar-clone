@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Checkbox from "@mui/material/Checkbox";
+import { pink, orange } from '@mui/material/colors';
+// import Checkbox from '@mui/material/Checkbox';
+
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -67,10 +70,17 @@ export const PlansPageHeader = () => {
           </span>
         </Middle>
         <Last>
-            <div>
-         <input type="checkbox" id="check" />
-          <label for = "check" >Save upto</label>
-            </div>
+          <Checkbox
+        {...label}
+        sx={{
+          color: orange[800],
+          '&.Mui-checked': {
+            color: orange[600],
+            size : "small"
+                  },
+        }} id = "check" />
+            <label for="check">Save upto</label>
+ 
         </Last>
       </Navbar2>
     </div>
@@ -126,7 +136,6 @@ const Navbar2 = styled.div`
   justify-content: space-between;
   z-index: 999;
   top: 2px;
-  
 `;
 
 const CHECKBOX = styled.div`
@@ -154,20 +163,24 @@ const Middle = styled.div`
 `;
 
 const Last = styled.div`
-width: 100px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-right : 7%;
-padding: 10px;
- label{
-    border : 1px solid orange;
-    display: flex;
-    width:100%;
+  width: 130px;
+  height: 18px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  margin-right: 7%;
+  border: 1px solid orange;
+  padding: 10px;
+  margin-top: 0.5%;
+  border-radius: 5px;
+  label {
+    width: 100%;
     color: orange;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-}
-`
+  }
+`;
+
+
+
+
 
