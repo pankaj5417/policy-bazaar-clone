@@ -5,11 +5,11 @@ import Homebody from "../../Components/homeBody.jsx/Homebody";
 
 function Home() {
   return (
-    <>
+    <div style={{ padding: "0", margin: "0" }}>
       <Header />
       <Homebody />
       <Footer />
-    </>
+    </div>
   );
 }
 

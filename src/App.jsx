@@ -1,10 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import "./";
 import Details from "./Components/TermlifeInsurance/Details";
 import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
 import { PlanCard } from "./Components/planCard/PlanCard";
 import Planspage from "./Components/Insuranceplanpage/Planspage";
+import UserForm from "./Components/userForm/UserForm";
+import { ReviewDetails } from "./Components/userForm/reviewDetails";
 import { QuotationPage } from "./pages/Quotations/QuotationPage";
 
 function App() {
@@ -16,7 +19,10 @@ function App() {
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
         <Route path="/user" element={<UseForm />}></Route>
-        <Route path="/quote" element={<QuotationPage />}></Route>
+        <Route path="/review" element={<ReviewDetails />}></Route>
+
+        <Route path="/quote" element={<Quote />}></Route>
+        <Route path="/quotationPage" element={<QuotationPage />}></Route>
         <Route path="/details" element={<Details />}></Route>
       </Routes>
     </>

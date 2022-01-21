@@ -1,0 +1,335 @@
+.review-container{
+    width: 70%;
+    margin: auto;
+    border: 1px solid lightgray;
+    padding: 10px;
+    background-color: white;
+   
+}
+.review-bottom-container{
+    background-color: whitesmoke;
+}
+.review-heading{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+.review-heading-right{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+.review-heading-right-container{
+    display: flex;
+    align-items: center;
+}
+.review-heading-container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-container{
+   background-color: white;
+    height: 50px;
+    margin: 0px;
+  
+}
+.navbar-container-mid{
+    width: 94%;
+   padding: 10px;
+   margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.navbar-right{
+    display: flex;
+    align-items: center;
+}
+.policybaazar-logo{
+    width: 150px;
+}
+.review-heading2{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #E67E22;
+}
+.planReviewTitle {
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.19;
+    letter-spacing: 0.32px;
+    text-align: left;
+    color: #000000;
+    border: none;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.reviewAllDetails {
+    margin: 20px 0;
+}
+
+.reviewSerilNumber {
+    background-color: #e4ecf8;
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.71;
+    letter-spacing: 0.13px;
+    text-align: left;
+    color: #0065ff;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.reviewTitleIcon {
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.71;
+    letter-spacing: 0.13px;
+    text-align: left;
+    color: #000000;
+}
+
+.reviewTitle {
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: 0.13px;
+    text-align: left;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.editReviewDetails {
+    background: #0065ff;
+    display: flex;
+    position: absolute;
+    right: 0px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px 15px;
+    font-weight: 400;
+}
+
+    .editReviewDetails a {
+        color: #fff;
+    }
+
+.reviewTitle:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: #95bdfb;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.reviewTitle:after {
+    content: "";
+    height: 1px;
+    background-color: #95bdfb;
+    flex-grow: 1;
+    margin: 0 0 0 10px;
+}
+
+.reviewFormDetails ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+    .reviewFormDetails ul li {
+        width: 25%;
+        padding: 15px 10px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+    }
+
+.review-Detail-left {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #7a869a;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.reviewFormRightDetail {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.28px;
+    text-align: left;
+    color: #000;
+    font-weight: 600;
+    word-break: break-all;
+}
+
+.reviewDobPostSuffix {
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    text-align: right;
+    color: #253858;
+    border-radius: 8px;
+    background-color: #f0f3f9;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2px 8px;
+}
+
+.questionAnswerReviewDetail {
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.warningOrangeTxt {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.29;
+    letter-spacing: 0.28px;
+    text-align: left;
+    color: #c36b02;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    position: relative;
+    justify-content: center;
+}
+
+.questionAnswerDiv {
+    display: flex;
+    width: 100%;
+}
+
+.ifYesDetails {
+    margin: 10px 0;
+}
+
+.questionAnswerReviewLeft {
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 18px;
+    letter-spacing: 0.24px;
+    text-align: left;
+    color: #7a869a;
+    flex-grow: 1;
+}
+
+.questionAnswerReviewRight {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.28px;
+    text-align: left;
+    color: #000;
+}
+
+.moreLess {
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.28px;
+    text-align: left;
+    color: #488ffd;
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+    .moreLess:after {
+        content: '';
+        position: absolute;
+        margin: auto;
+        top: 1px;
+        width: 9px;
+        justify-content: center;
+        height: 9px;
+        align-items: center;
+        border-right: 2px solid #718ffd;
+        border-bottom: 2px solid #718ffd;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        margin-left: 60px;
+    }
+
+    .moreLess.Less:after {
+        content: "";
+        top: 5px;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+.reviewCustomScroll {
+    height: 500px;
+    overflow-y: scroll;
+    padding-bottom: 90px;
+}
+
+.revieBoxDiv {
+    padding-bottom: 160px;
+    width: 70%;
+}
+
+.mobileHeader {
+    display: none;
+}
+.bottom-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkout-btn>Button{
+    min-width:200px ;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:#E64A19 !important ;
+    color: white;
+}
