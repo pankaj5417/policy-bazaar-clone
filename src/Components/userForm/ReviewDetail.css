@@ -1,8 +1,35 @@
 .review-container{
-    width: 80%;
+    width: 70%;
     margin: auto;
     border: 1px solid lightgray;
     padding: 10px;
+}
+.review-heading{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+.review-heading-right{
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+.review-heading-right-container{
+    display: flex;
+    align-items: center;
+}
+.review-heading-container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.review-heading2{
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #E67E22;
 }
 .planReviewTitle {
     font-size: 16px;
@@ -265,4 +292,17 @@
 
 .mobileHeader {
     display: none;
+}
+.bottom-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.checkout-btn>Button{
+    min-width:200px ;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color:#E64A19 !important ;
+    color: white;
 }

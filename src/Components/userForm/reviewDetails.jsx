@@ -118,9 +118,23 @@ const control=useAnimation()
 
 
   return (
+      <>
+
+    <div className="review-heading-container">
+      <div>
+      <img src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/clientLogo.png" alt="" />
+      </div>
+        
+       <div>
+       <span className="review-heading">Please review below details before proceeding ahead</span>
+         <p className="review-heading2">These cannot be changed at a later stage</p>
+           </div> 
+           <div className="review-heading-right-container"><img src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/termIcon.svg" alt="" />
+           <span className="review-heading-right">Kotak Life e-Term</span>
+           </div>
+      </div>
   <div className="review-container">
       
-        <p>Please review below details before proceeding ahead.</p>
        
         <div class="reviewAllDetails">
                 <div class="d-flex align-items-center">
@@ -222,9 +236,65 @@ const control=useAnimation()
                     </ul>
                 </div>
             </div>
-         <Checkbox>I hereby consent to receive communication from Kotak e-Term or Its authorized representatives through</Checkbox>
-        
+         
+         <FormControlLabel
+        control={
+          <Checkbox
+           // checked={state.checkedB}
+            onChange={handleChange}
+            name="checkedB"
+           
+            color="primary"
+          />
+        }
+        label="I hereby consent to receive communication from Kotak e-Term or Its authorized representatives through" 
+      /><span><img src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/whatsapp-icon.svg" alt="" />&nbsp;Whatsapp on</span>
+
+<FormControlLabel
+        control={
+          <Checkbox
+           // checked={state.checkedB}
+            onChange={handleChange}
+            name="checkedB"
+            disabled
+            color="primary"
+          />
+        }
+        label="I agree to opt for Auto Debit for all the future premium payments of this policy"
+      />
+      <br />
+       <FormControlLabel
+        control={
+          <Checkbox
+           // checked={state.checkedB}
+            onChange={handleChange}
+            name="checkedB"
+            disabled
+            color="primary"
+          />
+        }
+        label="
+        I Agree to the terms and conditions"
+      />
+      
+      <div className="bottom-container">
+          <div className="total-premium">
+              <h3>Total Premium</h3>
+          </div>
+
+          <div className="checkout-btn">
+              <Button 
+             
+             variant="contained" 
+             
+              onClick={handleSubmit}
+              >Checkout</Button>
+          </div>
+
+      </div>
+
   </div>
+  </>
   )
 }
 

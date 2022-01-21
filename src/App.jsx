@@ -21,7 +21,7 @@ function App() {
         <Route path="/review" element={<ReviewDetails />}></Route>
 
         <Route path="/quote" element={<Quote />}></Route>
-        <Route path="/quote" element={<QuotationPage />}></Route>
+        <Route path="/quotationPage" element={<QuotationPage />}></Route>
         <Route path="/details" element={<Details />}></Route>
       </Routes>
     </>
