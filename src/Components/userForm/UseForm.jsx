@@ -11,6 +11,10 @@ import {TextField,
     InputLabel,
     Select,
     MenuItem,
+    Stepper,
+    Step,
+    StepLabel,
+    Typography,
     Button,} from '@material-ui/core';
 
     function UseForm() {
@@ -36,7 +40,18 @@ import {TextField,
           noLabel: {
             marginTop: theme.spacing(3),
           },
-      }));
+
+          root: {
+            width: '100%',
+          },
+          button: {
+            marginRight: theme.spacing(1),
+          },
+          instructions: {
+            marginTop: theme.spacing(1),
+            marginBottom: theme.spacing(1),
+          },
+        }))
 
     const classes = useStyles();
     const theme = useTheme();
@@ -51,6 +66,70 @@ const MenuProps = {
     },
   },
 };
+
+function getSteps() {
+  return ['Your Details', 'Upgrade your plan', 'Add-On Riders'];
+}
+
+function getStepContent(step) {
+  switch (step) {
+    case 0:
+      return 'Your Details';
+    case 1:
+      return 'Upgrade your plan';
+    case 2:
+      return 'Add-On Riders';
+    default:
+      return 'Unknown step';
+  }
+}
+
+const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set());
+  const steps = getSteps();
+  console.log(activeStep)
+
+  const isStepOptional = (step) => {
+    return step === 1;
+  };
+
+  const isStepSkipped = (step) => {
+    return skipped.has(step);
+  };
+
+  const handleNext = () => {
+    let newSkipped = skipped;
+    if (isStepSkipped(activeStep)) {
+      newSkipped = new Set(newSkipped.values());
+      newSkipped.delete(activeStep);
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped(newSkipped);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleSkip = () => {
+    if (!isStepOptional(activeStep)) {
+      // You probably want to guard against something like this,
+      // it should never occur unless someone's actively trying to break something.
+      throw new Error("You can't skip a step that isn't optional.");
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped((prevSkipped) => {
+      const newSkipped = new Set(prevSkipped.values());
+      newSkipped.add(activeStep);
+      return newSkipped;
+    });
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
 
   const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" };
@@ -67,11 +146,13 @@ const MenuProps = {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+   
   };
 
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
+      handleNext()
       console.log(formValues);
     }
   }, [formErrors]);
@@ -194,7 +275,7 @@ const MenuProps = {
      
         <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Pay For</InputLabel>
-            <Select   MenuProps={MenuProps}  name="payFor" >
+            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="payFor" >
                 <option disabled value="" selected>Education</option>
                 <option value="onetime">One Time</option>
                 <option value="5years">5 Years</option>
@@ -207,7 +288,7 @@ const MenuProps = {
 
             <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Mode of Premium Payment</InputLabel>
-            <Select   MenuProps={MenuProps}  name="premiumPayment" >
+            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="premiumPayment" >
                 <option value="monthly">Monthly</option>
                 <option value="yearly">Yearly</option>
                 
@@ -220,9 +301,29 @@ const MenuProps = {
 
 
         <div className="form-right-container">
+          <div>
        
-        <h1>Your Details</h1>
-         
+          </div>
+       
+          <div className={classes.root}>
+      <Stepper activeStep={activeStep}>
+        {steps.map((label, index) => {
+          const stepProps = {};
+          const labelProps = {};
+          if (isStepOptional(index)) {
+            labelProps.optional = <Typography variant="caption"></Typography>;
+          }
+          if (isStepSkipped(index)) {
+            stepProps.completed = false;
+          }
+          return (
+            <Step key={label} {...stepProps}>
+              <StepLabel {...labelProps}>{label}</StepLabel>
+            </Step>
+          );
+        })}
+      </Stepper>
+      
           
         <div className="field">
             <TextField
@@ -267,7 +368,7 @@ const MenuProps = {
 
           <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Occupation</InputLabel>
-            <Select   MenuProps={MenuProps} name="Occupation" id="occupation">
+            <Select  onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
                 <option value="" selected>Occupation</option>
                 <option value="salaried">Salaried</option>
                 <option value="self-employed">Self Employed</option>
@@ -279,7 +380,7 @@ const MenuProps = {
 
                 <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Education</InputLabel>
-            <Select   MenuProps={MenuProps}  name="Education" id="education">
+            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="Education" id="education">
                 <option disabled value="" selected>Education</option>
                 <option value="postgraduate">Post-Graduate & Above</option>
                 <option value="12th">12th</option>
@@ -291,7 +392,51 @@ const MenuProps = {
             </FormControl>
             <br />
          
-          <Button className="fluid ui button blue">Proceed</Button>
+         
+
+          <div>
+      {activeStep === steps.length ? (
+          <div>
+            <Typography className={classes.instructions}>
+              All steps completed - you&apos;re finished
+            </Typography>
+            <Button onClick={handleReset} className={classes.button}>
+              Reset
+            </Button>
+          </div>
+        ) : (
+          <div>
+            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+            <div>
+              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+                Back
+              </Button>
+              {isStepOptional(activeStep) && (
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSkip}
+                  className={classes.button}
+                >
+                  Skip
+                </Button>
+              )}
+
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                className={classes.button}
+              >
+                {activeStep === steps.length - 1 ? 'Finish' : 'Proceed'}
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+         
+
         </div>
       
       </form>
