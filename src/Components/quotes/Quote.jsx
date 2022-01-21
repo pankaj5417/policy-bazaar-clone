@@ -31,7 +31,7 @@ export const Quote = () => {
         "& + .MuiSwitch-track": {
           opacity: 1,
           backgroundColor:
-            theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+            theme.palette.mode === "dark" ? "#ffffff" : "#ffffff",
         },
       },
     },
@@ -53,7 +53,7 @@ export const Quote = () => {
     },
     "& .MuiSwitch-track": {
       opacity: 1,
-      backgroundColor: theme.palette.mode === "dark" ? "#8796A5" : "#aab4be",
+      backgroundColor: theme.palette.mode === "dark" ? "#ffffff" : "#ffffff",
       borderRadius: 20 / 2,
     },
   }));
@@ -70,6 +70,8 @@ export const Quote = () => {
               style={{ margin: "0px 3px" }}
             />
           </div>
+
+          {/* you need to append here */}
           <div className="lifeCover">
             <div>Life Cover</div>
             <div>
@@ -82,6 +84,8 @@ export const Quote = () => {
             </div>
           </div>
 
+
+          {/* you need to append here */}
           <div className="coverTillAge">
             <div>Cover till age</div>
 
@@ -94,6 +98,8 @@ export const Quote = () => {
               />
             </div>
           </div>
+
+
           <div>
             <p>Claim Settled</p>
             <img

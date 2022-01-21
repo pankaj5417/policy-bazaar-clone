@@ -1,3 +1,7 @@
+body {
+    background-color: #f4f5f7;
+}
+
 .quotation-page-main {
     display: grid;
     grid-template-columns: 70% 30%;
