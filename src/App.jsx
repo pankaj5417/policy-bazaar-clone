@@ -6,6 +6,8 @@ import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
 import { PlanCard } from "./Components/planCard/PlanCard";
 import Planspage from "./Components/Insuranceplanpage/Planspage";
+import UserForm from "./Components/userForm/UserForm";
+import { ReviewDetails } from "./Components/userForm/reviewDetails";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
         <Route path="/user" element={<UseForm />}></Route>
+        <Route path="/review" element={<ReviewDetails />}></Route>
+
         <Route path="/quote" element={<Quote />}></Route>
         <Route path="/details" element={<Details />}></Route>
       </Routes>

@@ -31,13 +31,13 @@
   button {
     background: #0563b4;
   }
-  p {
-    color: red;
-  }
+  
   #occupation, #education{
       width: 250px;
   }
-
+ TextField{
+  width: 600px;
+}
   .form-left-container{
     width: 37%;
     border: 1px solid lightgray;
@@ -80,8 +80,4 @@
    .arrow-symbol{
      display: none;
    }
-   .total-button-container:hover{
    
-    width: 100%;
-
-   }
