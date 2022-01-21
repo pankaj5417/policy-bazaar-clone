@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Checkbox from "@mui/material/Checkbox";
-import { pink, orange } from '@mui/material/colors';
+import { pink, orange } from "@mui/material/colors";
 // import Checkbox from '@mui/material/Checkbox';
-
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 export const PlansPageHeader = () => {
+  const data = JSON.parse(localStorage.getItem("basicUserDetails"));
+
   return (
     <div className="main">
       <Navbar>
@@ -17,10 +18,10 @@ export const PlansPageHeader = () => {
         <Nav>
           <div>
             <UL>
-              <li>Male | </li>
-              <li>21 yrs | </li>
-              <li>Non-Smoker | </li>
-              <li>10-15lac | </li>
+              <li>{data.gender} | </li>
+              <li>{data.age} yrs | </li>
+              <li>{data.smoker ? "Smoker" : "Non-Smoker"} | </li>
+              <li>{data.income} lac | </li>
               <span style={{ color: "blue" }}>EDIT</span>
             </UL>
           </div>
@@ -71,16 +72,17 @@ export const PlansPageHeader = () => {
         </Middle>
         <Last>
           <Checkbox
-        {...label}
-        sx={{
-          color: orange[800],
-          '&.Mui-checked': {
-            color: orange[600],
-            size : "small"
-                  },
-        }} id = "check" />
-            <label>Save upto</label>
- 
+            {...label}
+            sx={{
+              color: orange[800],
+              "&.Mui-checked": {
+                color: orange[600],
+                size: "small",
+              },
+            }}
+            id="check"
+          />
+          <label>Save upto</label>
         </Last>
       </Navbar2>
     </div>
@@ -179,8 +181,3 @@ const Last = styled.div`
     cursor: pointer;
   }
 `;
-
-
-
-
-

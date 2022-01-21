@@ -338,7 +338,7 @@ function UseForm() {
             <div className="field">
               <TextField
                 id="standard-basic"
-                label="Full Name as per your ID Proof"
+                label="Full Name as per your ID"
                 type="text"
                 name="username"
                 // placeholder="Full Name as per your ID Proof"

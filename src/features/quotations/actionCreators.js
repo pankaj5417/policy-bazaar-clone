@@ -24,11 +24,14 @@ export const quotesIsError = (e) => {
   };
 };
 
-export const getQuotesData = () => (dispatch) => {
+export const getQuotesData = (range) => (dispatch) => {
   try {
     dispatch(quotesIsLoading);
 
-    fetch("http://localhost:3001/quotesData")
+    let sortType = range.claimsSettled ? "asc" : "desc";
+    fetch(
+      `http://localhost:3001/quotesData?lifeCover_lte=${range.lifeCover}&coverage_lte=${range.coverage}&_sort=claimsSettled&_order=${sortType}`
+    )
       .then((e) => e.json())
       .then((res) => {
         dispatch(quotesIsSuccess(res));
