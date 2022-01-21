@@ -1,20 +1,7 @@
 import("./PlanCard.css");
 
-export const PlanCard = () => {
-  const data = {
-    insurerName: "Exide Life Insurance",
-    img: "http://static.pbcdn.in/term-cdn/images/images/insurer/exide_logo.png",
-    type: "Smart Term Edge Classic",
-    lifeCover: "4.6 Cr",
-    survivalBenefit: "11.01 Lac",
-    coverage: "28 Yrs",
-    maxLimit: "71 Yrs",
-    claimsSettled: "99.8%",
-    monthly: "₹11,697",
-    yearly: "₹1,33,681",
-    medicalSupport: "Physical Medical",
-    claimSettlementTime: "24 hrs",
-  };
+export const PlanCard = (data) => {
+  console.log("paymonthly", data.payMonthly);
 
   return (
     <>
@@ -36,25 +23,29 @@ export const PlanCard = () => {
         </div>
 
         <div className="lifeCover">
-          <h6>{data.lifeCover}</h6>
+          <h6>
+            {data.lifeCover > 99
+              ? `${data.lifeCover / 100} Cr`
+              : `${data.lifeCover} Lac`}
+          </h6>
           <p>
             Survival Benefit{" "}
-            <b style={{ color: "black" }}>{data.survivalBenefit}</b>
+            <b style={{ color: "black" }}>{data.survivalBenefit} Lac</b>
           </p>
         </div>
 
         <div className="coverDuration">
-          <h6>{data.coverage}</h6>
-          <p>Max Limit: {data.maxLimit}</p>
+          <h6>{data.coverage} Yrs</h6>
+          <p>Max Limit: {data.maxLimit} Yrs</p>
         </div>
 
         <div>
-          <h6>{data.claimsSettled}</h6>
+          <h6>{data.claimsSettled}%</h6>
         </div>
 
         <div className="price">
           <div className="priceBtn">
-            <h4>{data.monthly}</h4>
+            <h4>₹{data.monthly}</h4>
             <div>
               <img
                 src="https://img.icons8.com/ios-glyphs/18/ffffff/chevron-right.png"
