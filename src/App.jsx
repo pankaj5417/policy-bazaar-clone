@@ -5,6 +5,7 @@ import Details from "./Components/TermlifeInsurance/Details";
 import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
 import { PlanCard } from "./Components/planCard/PlanCard";
+import Planspage from "./Components/Insuranceplanpage/Planspage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/user" element={<UseForm />}></Route>
         <Route path="/quote" element={<Quote />}></Route>
+        <Route path="/details" element={<Details />}></Route>
       </Routes>
     </div>
   );
