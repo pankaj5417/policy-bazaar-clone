@@ -1,0 +1,68 @@
+.corousel_parent{
+    height: 420px;
+    width: 1140px;
+    margin: auto;
+    background-image: url("https://static.pbcdn.in/cdn/images/webp/testimonial-bg.webp");
+    background-size: cover;
+    background-color: transparent;
+
+}
+.heading_div{
+    width: 1140px;
+    height: 40px;
+    margin:40px auto;
+    text-align:left;
+    line-height: 36px;
+}
+.heading_div h2{
+    font-size:30px;
+    font-weight: 500px;
+}
+
+.carousel2_box_div{
+    margin: auto;
+    height: 420px;
+    width: 1140px;
+}
+
+.parent_slides{
+    
+    display: flex;
+    height: 290px;
+    width: 1140px;
+    margin:50px auto;
+}
+.child_slides{
+    width: 370px;
+    height: 290px;
+    margin:0 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.corousel2_btn{
+    width: 50px;
+    height: 30px;
+    background-color: #fff;
+    border: none;
+    color: blue;
+    border-radius: 2px;
+    font-size: 32px;
+    position: relative;
+    left: 34%;
+    
+}
+.title_text{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 40px;
+}
+.para_text{
+    font-size: 14px;
+    line-height: 27px;
+    margin: 40px;
+}
+.symbol_text{
+    font-size: 32px;
+    color: blueviolet;
+}
+
