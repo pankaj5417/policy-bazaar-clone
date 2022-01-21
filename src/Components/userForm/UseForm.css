@@ -1,87 +1,81 @@
- 
-  
-  .container {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    min-width: 700px;
-    width: 100%;
-    margin: auto;
-    border: 1px solid black;
-  }
-  .container > form {
-      display: flex;
-      margin: 10px;
-    width: 70%;
-    border: 1px solid #dfdfdf;
-    padding: 20px;
-    height: 96vh;
-    border-radius: 5px;
-    background: #fff;
-    border: 1px solid black;
-  }
-  pre {
-    width: 70%;
-    color: #fff;
-    font-size: larger;
-  }
-  
-  button {
-    background: #0563b4;
-  }
-  p {
-    color: red;
-  }
-  #occupation, #education{
-      width: 250px;
-  }
+div > .container {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-width: 700px;
+  width: 100%;
+  margin: auto;
+  border: 1px solid black;
+}
+.container > form {
+  display: flex;
+  margin: 10px;
+  width: 70%;
+  border: 1px solid #dfdfdf;
+  padding: 20px;
+  height: 96vh;
+  border-radius: 5px;
+  background: #fff;
+  border: 1px solid black;
+}
+pre {
+  width: 70%;
+  color: #fff;
+  font-size: larger;
+}
 
-  .form-left-container{
-    width: 37%;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    background-color: white;
-  }
+button {
+  background: #0563b4;
+}
+#occupation,
+#education {
+  width: 250px;
+}
 
-  .form-right-container{
-    margin-left: 30px;
-    width: 60%;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    background-color: white;
-  }
-  .hr-line{
-    width: 150px;
-    height: 1px;
-    background-color: black;
-  }
-   .total-button-container{
-     width: 95%;
-     margin: auto;
-     border: 1px solid lightgray;
-     padding: 10px;
-     border-radius: 4px;
-     display: flex;
-     justify-content: space-between;
-   }
-   .button-container>Button{
-    width: 200px;
-     padding: 5px;
-     background-color:red !important;
-     color: white;
-   }
-   .button-container>Button:hover .arrow-symbol{
-     display: block;
-     transition: 1s ease-in;
-     animation: ease-in 1s;
-   }
-   .arrow-symbol{
-     display: none;
-   }
-   .total-button-container:hover{
-   
-    width: 100%;
+.form-left-container {
+  width: 37%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: white;
+}
 
-   }
+.form-right-container {
+  margin-left: 30px;
+  width: 60%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: white;
+}
+.hr-line {
+  width: 150px;
+  height: 1px;
+  background-color: black;
+}
+.total-button-container {
+  width: 95%;
+  margin: auto;
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+.button-container > Button {
+  width: 200px;
+  padding: 5px;
+  background-color: red !important;
+  color: white;
+}
+.button-container > Button:hover .arrow-symbol {
+  display: block;
+  transition: 1s ease-in;
+  animation: ease-in 1s;
+}
+.arrow-symbol {
+  display: none;
+}
+.total-button-container:hover {
+  width: 100%;
+}

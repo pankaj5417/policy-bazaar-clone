@@ -6,10 +6,12 @@ import { PlanCard } from "../planCard/PlanCard";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getQuotesData } from "../../features/quotations/actionCreators";
+import { useState } from "react";
 
 import("./Quote.css");
 
 export const Quote = () => {
+  // const [list , setList] = useState(false)
   const filter = {
     coverage: "35 Lac",
     coverTillAge: "38 Yrs",
@@ -28,6 +30,15 @@ export const Quote = () => {
   useEffect(() => {
     dispatch(getQuotesData());
   }, []);
+
+  // const handleList = () => {
+  //    if(list){
+  //      setList(false);
+  //    }
+  //    else{
+  //      setList(true)
+  //    }
+  // }
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 52,
@@ -92,26 +103,64 @@ export const Quote = () => {
           <div className="lifeCover">
             <div>Life Cover</div>
             <div>
-              <b>{filter.coverage}</b>
-              <img
-                src="https://img.icons8.com/external-those-icons-lineal-those-icons/12/ffffff/external-down-arrows-those-icons-lineal-those-icons-1.png"
-                alt="arrow-down"
-                style={{ margin: "0px 3px" }}
-              />
+              <select>
+                <option value="25lakh">25 Lacs</option>
+                <option value="50lakh">50 Lacs</option>
+                <option value="75lakh">75 Lacs</option>
+                <option value="1crore">1 Crore</option>
+                <option value="1.25crore">1.25 Crore</option>
+                <option value="1.5crore">1.5 Crore</option>
+                <option value="1.75crore">1.75 Crore</option>
+                <option value="2crore">2 Crore</option>
+                <option value="2.25crore">2.25 Crore</option>
+                <option value="2.50crore">2.50 Crore</option>
+                <option value="2.75crore">2.75 Crore</option>
+                <option value="3crore">3 Crore</option>
+                <option value="3.25crore">3.25 Crore</option>
+                <option value="3.50crore">3.50 Crore</option>
+                <option value="3.75crore">3.75 Crore</option>
+                <option value="4crore">4 Crore</option>
+                <option value="4.25crore">4.25 Crore</option>
+                <option value="4.50crore">4.50 Crore</option>
+                <option value="4.75crore">4.75 Crore</option>
+                <option value="5crore">5 Crore</option>
+                <option value="6crore">6 Crore</option>
+              </select>
             </div>
           </div>
 
           {/* you need to append here */}
           <div className="coverTillAge">
-            <div>Cover till age</div>
-
+            <div style={{ fontSize: "12px" }}>Cover till age</div>
             <div>
-              <b>{filter.coverTillAge}</b>
-              <img
-                src="https://img.icons8.com/external-those-icons-lineal-those-icons/12/ffffff/external-down-arrows-those-icons-lineal-those-icons-1.png"
-                alt="arrow-down"
-                style={{ margin: "0px 3px" }}
-              />
+              <select>
+                <option value="32years">32 Years</option>
+                <option value="33years">33 Years</option>
+                <option value="34years">34 Years</option>
+                <option value="35years">35 Years</option>
+                <option value="36years">36 Years</option>
+                <option value="37years">37 Years</option>
+                <option value="38years">38 Years</option>
+                <option value="39years">39 Years</option>
+                <option value="40years">40 Years</option>
+                <option value="41years">41 Years</option>
+                <option value="42years">42 Years</option>
+                <option value="43years">43 Years</option>
+                <option value="44years">44 Years</option>
+                <option value="45years">45 Years</option>
+                <option value="46years">46 Years</option>
+                <option value="47years">47 Years</option>
+                <option value="48years">48 Years</option>
+                <option value="49years">49 Years</option>
+                <option value="50years">50 Years</option>
+                <option value="51years">51 Years</option>
+                <option value="52years">52 Years</option>
+                <option value="53years">53 Years</option>
+                <option value="54years">54 Years</option>
+                <option value="55years">55 Years</option>
+                <option value="60years">60 Years</option>
+                <option value="75years">75 Years</option>
+              </select>
             </div>
           </div>
 

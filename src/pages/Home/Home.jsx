@@ -1,14 +1,15 @@
 import React from "react";
 import Footer from "../../Components/homeFooter/Footer";
-import Header from "../../Components/homeHeader/Header";
+import Header from "../../Components/homeHeader/Navbar";
+import Homebody from "../../Components/homeBody.jsx/Homebody";
 
 function Home() {
   return (
-    <div>
+    <>
       <Header />
-      <h1>Here Comes the main Content Of the Website</h1>
+      <Homebody />
       <Footer />
-    </div>
+    </>
   );
 }
 

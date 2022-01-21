@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import "./App.css";
 import Details from "./Components/TermlifeInsurance/Details";
 import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
@@ -10,7 +9,7 @@ import { QuotationPage } from "./pages/Quotations/QuotationPage";
 
 function App() {
   return (
-    <div>
+    <>
       {/* <Planspage /> */}
       {/* <PlanCard /> */}
       <Routes>
@@ -20,7 +19,7 @@ function App() {
         <Route path="/quote" element={<QuotationPage />}></Route>
         <Route path="/details" element={<Details />}></Route>
       </Routes>
-    </div>
+    </>
   );
 }
 
