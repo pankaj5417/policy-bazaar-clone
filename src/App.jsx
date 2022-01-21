@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import "./";
 import Details from "./Components/TermlifeInsurance/Details";
 import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
