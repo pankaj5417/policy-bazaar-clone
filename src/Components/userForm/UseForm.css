@@ -35,7 +35,7 @@
     color: red;
   }
   #occupation, #education{
-      width: 150px;
+      width: 250px;
   }
 
   .form-left-container{
@@ -51,4 +51,9 @@
     border: 1px solid lightgray;
     border-radius: 4px;
     background-color: white;
+  }
+  .hr-line{
+    width: 150px;
+    height: 1px;
+    background-color: black;
   }
