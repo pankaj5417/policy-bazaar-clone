@@ -3,6 +3,7 @@ import { Quote } from "../../Components/quotes/Quote";
 import { AdCard } from "../../Components/ads/AdCard.jsx";
 
 import "./QuotationPage.css";
+import { QuotesFooter } from "../../Components/quotesFooter/Footer";
 
 export const QuotationPage = () => {
   return (
@@ -12,6 +13,7 @@ export const QuotationPage = () => {
         <Quote />
         <AdCard />
       </div>
+      <QuotesFooter />
     </>
   );
 };

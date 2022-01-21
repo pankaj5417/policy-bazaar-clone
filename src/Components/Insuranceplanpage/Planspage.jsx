@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Checkbox from "@mui/material/Checkbox";
+import { pink, orange } from '@mui/material/colors';
+// import Checkbox from '@mui/material/Checkbox';
+
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -66,6 +69,19 @@ export const PlansPageHeader = () => {
             All at one go
           </span>
         </Middle>
+        <Last>
+          <Checkbox
+        {...label}
+        sx={{
+          color: orange[800],
+          '&.Mui-checked': {
+            color: orange[600],
+            size : "small"
+                  },
+        }} id = "check" />
+            <label for="check">Save upto</label>
+ 
+        </Last>
       </Navbar2>
     </div>
   );
@@ -82,7 +98,7 @@ const UL = styled.ul`
   padding: 0px 35px;
   font-size: 13px;
   li {
-    padding: 0px 10px;
+    padding: 0px 5px;
   }
 `;
 
@@ -117,6 +133,7 @@ const Navbar2 = styled.div`
   box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
   display: flex;
   box-sizing: border-box;
+  justify-content: space-between;
   z-index: 999;
   top: 2px;
 `;
@@ -139,10 +156,31 @@ const CHECKBOX = styled.div`
   }
 `;
 const Middle = styled.div`
-  margin-left: 5%;
   align-items: center;
   display: flex;
   font-size: 13px;
   justify-content: center;
 `;
+
+const Last = styled.div`
+  width: 130px;
+  height: 18px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  margin-right: 7%;
+  border: 1px solid orange;
+  padding: 10px;
+  margin-top: 0.5%;
+  border-radius: 5px;
+  label {
+    width: 100%;
+    color: orange;
+    cursor: pointer;
+  }
+`;
+
+
+
+
 
