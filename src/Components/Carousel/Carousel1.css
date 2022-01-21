@@ -1,0 +1,25 @@
+.box_div {
+  text-align: center;
+  background-color: #f2f7ff;
+  height: 150px;
+  margin: 40px auto;
+  margin: auto;
+}
+.box_div img {
+  width: 370px;
+  height: 96px;
+  border-radius: 4px;
+  margin: 25px 2px;
+}
+.btn_change {
+  width: 50px;
+  height: 30px;
+  background-color: #fff;
+  border: none;
+  color: blue;
+  border-radius: 2px;
+  font-size: 32px;
+}
+.btn_change:hover {
+  background-color: #5d8ddb;
+}

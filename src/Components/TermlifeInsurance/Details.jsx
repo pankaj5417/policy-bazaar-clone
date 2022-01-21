@@ -16,18 +16,17 @@ const Details = () => {
   };
 
   const [details, setDetails] = React.useState(false);
-    
-  const handleDetails = ()=>{
-     if(details){
-       setDetails(false);
-     }
-     else{
-       setDetails(true);
-     }
-  }
+
+  const handleDetails = () => {
+    if (details) {
+      setDetails(false);
+    } else {
+      setDetails(true);
+    }
+  };
   return (
     <div className="main">
-      <div className="navbar">
+      <div className="navbar1">
         <div className="first">
           <img src="policylogo.png" alt="Policy Bazaar" />
         </div>
@@ -128,87 +127,87 @@ const Details = () => {
         </div>
       </div>
       <div className="form2">
-        <h3 className="know-more" onClick = {handleDetails}>
+        <h3 className="know-more" onClick={handleDetails}>
           <span>Know More about life insurance</span>
         </h3>
         {/* <br /> */}
-        { details ? 
+        {details ? (
           <div className="details">
-          <h3>Term Life Insurance</h3>
-          <ul>
-            <li>
-              Term Life insurance provides coverage for a fixed period of time
-              at a fixed premium rate.
-            </li>
-            <li>
-              In case of untimely death of the life insured during the policy
-              term , the nominee of the life insured gets the Total
-              Payout/Benefit. The benefit can be paid out as a lump sum payout
-              or a combination of Lump sum & Monthly payout or only as a Monthly
-              payout.
-            </li>
-            <li>
-              Therefore Term insurance plans are said to be pure protection
-              plans which ensure financial stability of the dependants in case
-              of untimely death of the life insured.
-            </li>
-          </ul>
-          <h3>Benefits of Term Life Insurance</h3>
-          <ul>
-            <li>
-              Death Benefit: In the unfortunate event of death of life insured
-              during policy term, the nominee shall receive the Total Payout as
-              a Lump sum amount or a combination of Lump sum & Monthly amount.
-            </li>
-            <li>
-              Lump sum amount to take care of immediate financial liabilities.
-            </li>
-            <li>Monthly income to sustain the family lifestyle.</li>
-            <li>
-              Tax Benefit: The premiums paid for Term Life Insurance are Tax
-              free under section 80(C) upto an amount of Rs 1,50,000.
-            </li>
-            <li>
-              Rider Benefits: Riders are an important addition to the basic plan
-              offering & provide an option to customize the coverage to the life
-              insured.
-            </li>
-            <li>
-              Accidental Death Benefit rider offers an additional sum assured
-              over the base plan offering in case death occurs due to an
-              accident.
-            </li>
-            <li>
-              Accidental Disability rider offers an immediate lump sum payment
-              on occurrence of any disability due to an accident.
-            </li>
-            <li>
-              Critical Illness rider offers an additional sum assured over the
-              base plan offering if the life insured is diagnosed with one of
-              the critical illnesses mentioned in the rider.
-            </li>
-            <li>
-              Waiver of Premium rider offers the waiver of all policy premiums
-              in case the life insured is diagnosed permanent disability or
-              critical illness.
-            </li>
-            <li>
-              Option to increase Death benefit: Certain plans have offerings
-              where the life insured can increase the life cover at key stages
-              in life like marriage , birth of child.
-            </li>
-          </ul>
-          <h3>Key Terms when comparing Term Life insurance plans</h3>
-          <ul>
-            <li>Total Payout of each plan</li>
-            <li>Premium amount paid for desired Total Payout</li>
-            <li>Policy term offered</li>
-            <li>High claim settlement ratio</li>
-          </ul>
-        </div>:null
-        }
-        </div>
-        
+            <h3>Term Life Insurance</h3>
+            <ul>
+              <li>
+                Term Life insurance provides coverage for a fixed period of time
+                at a fixed premium rate.
+              </li>
+              <li>
+                In case of untimely death of the life insured during the policy
+                term , the nominee of the life insured gets the Total
+                Payout/Benefit. The benefit can be paid out as a lump sum payout
+                or a combination of Lump sum & Monthly payout or only as a
+                Monthly payout.
+              </li>
+              <li>
+                Therefore Term insurance plans are said to be pure protection
+                plans which ensure financial stability of the dependants in case
+                of untimely death of the life insured.
+              </li>
+            </ul>
+            <h3>Benefits of Term Life Insurance</h3>
+            <ul>
+              <li>
+                Death Benefit: In the unfortunate event of death of life insured
+                during policy term, the nominee shall receive the Total Payout
+                as a Lump sum amount or a combination of Lump sum & Monthly
+                amount.
+              </li>
+              <li>
+                Lump sum amount to take care of immediate financial liabilities.
+              </li>
+              <li>Monthly income to sustain the family lifestyle.</li>
+              <li>
+                Tax Benefit: The premiums paid for Term Life Insurance are Tax
+                free under section 80(C) upto an amount of Rs 1,50,000.
+              </li>
+              <li>
+                Rider Benefits: Riders are an important addition to the basic
+                plan offering & provide an option to customize the coverage to
+                the life insured.
+              </li>
+              <li>
+                Accidental Death Benefit rider offers an additional sum assured
+                over the base plan offering in case death occurs due to an
+                accident.
+              </li>
+              <li>
+                Accidental Disability rider offers an immediate lump sum payment
+                on occurrence of any disability due to an accident.
+              </li>
+              <li>
+                Critical Illness rider offers an additional sum assured over the
+                base plan offering if the life insured is diagnosed with one of
+                the critical illnesses mentioned in the rider.
+              </li>
+              <li>
+                Waiver of Premium rider offers the waiver of all policy premiums
+                in case the life insured is diagnosed permanent disability or
+                critical illness.
+              </li>
+              <li>
+                Option to increase Death benefit: Certain plans have offerings
+                where the life insured can increase the life cover at key stages
+                in life like marriage , birth of child.
+              </li>
+            </ul>
+            <h3>Key Terms when comparing Term Life insurance plans</h3>
+            <ul>
+              <li>Total Payout of each plan</li>
+              <li>Premium amount paid for desired Total Payout</li>
+              <li>Policy term offered</li>
+              <li>High claim settlement ratio</li>
+            </ul>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };
