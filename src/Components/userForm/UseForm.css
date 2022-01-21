@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
     min-width: 700px;
     width: 100%;
     margin: auto;
@@ -17,7 +17,7 @@
     width: 70%;
     border: 1px solid #dfdfdf;
     padding: 20px;
-    height: 80vh;
+    height: 96vh;
     border-radius: 5px;
     background: #fff;
     border: 1px solid black;
@@ -57,3 +57,31 @@
     height: 1px;
     background-color: black;
   }
+   .total-button-container{
+     width: 95%;
+     margin: auto;
+     border: 1px solid lightgray;
+     padding: 10px;
+     border-radius: 4px;
+     display: flex;
+     justify-content: space-between;
+   }
+   .button-container>Button{
+    width: 200px;
+     padding: 5px;
+     background-color:red !important;
+     color: white;
+   }
+   .button-container>Button:hover .arrow-symbol{
+     display: block;
+     transition: 1s ease-in;
+     animation: ease-in 1s;
+   }
+   .arrow-symbol{
+     display: none;
+   }
+   .total-button-container:hover{
+   
+    width: 100%;
+
+   }
