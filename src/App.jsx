@@ -10,7 +10,8 @@ import Planspage from "./Components/Insuranceplanpage/Planspage";
 function App() {
   return (
     <div className="App">
-      {/* <Details /> */}
+      <Planspage />
+      {/* <PlanCard /> */}
       <Routes>
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
