@@ -68,7 +68,8 @@ export const PlansPageHeader = () => {
         </Middle>
         <Last>
             <div>
-         <input type="checkbox" /> Save Upto
+         <input type="checkbox" id="check" />
+          <label for = "check" >Save upto</label>
             </div>
         </Last>
       </Navbar2>
@@ -159,7 +160,7 @@ justify-content: center;
 align-items: center;
 margin-right : 7%;
 padding: 10px;
-div{
+ label{
     border : 1px solid orange;
     display: flex;
     width:100%;
@@ -167,11 +168,6 @@ div{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  input{
-    cursor: pointer;
-    border:1px solid orange;
-    background: white;
-  }
 }
 `
 
