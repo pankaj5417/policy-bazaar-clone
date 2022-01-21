@@ -333,3 +333,6 @@
     background-color:#E64A19 !important ;
     color: white;
 }
+.cursor{
+    cursor: pointer;
+}

@@ -31,8 +31,9 @@ import React from 'react';
           },
         formControl: {
             margin: theme.spacing(1),
-            minWidth: 320,
+            minWidth: 470,
             maxWidth: 400,
+            marginLeft:100
           },
           chips: {
             display: 'flex',
