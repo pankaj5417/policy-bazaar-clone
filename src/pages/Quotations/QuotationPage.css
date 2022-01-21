@@ -1,0 +1,10 @@
+body {
+    background-color: #f4f5f7;
+}
+
+.quotation-page-main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-gap: 20px;
+    margin: 30px 2%;
+}

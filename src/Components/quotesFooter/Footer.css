@@ -1,0 +1,15 @@
+.quotes-footer-container {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.quotes-footer-container > div {
+    width: 570px;
+    height: fit-content;
+    margin: auto;
+    margin-top: 40px;
+    /* line-height: 1.16 rem; */
+}
+
