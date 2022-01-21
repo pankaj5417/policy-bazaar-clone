@@ -17,7 +17,7 @@ function Navbar() {
             alt="logo"
           />
         </div>
-        <div className="navbar-insu " onMouseOver={display}>
+        <div className="navbar-insu" onMouseOver={display}>
           <p>Insurance Products</p>
           <svg
             width="12"
