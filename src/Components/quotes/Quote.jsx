@@ -13,16 +13,18 @@ export const Quote = () => {
   };
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-    width: 62,
+    width: 52,
     height: 34,
     padding: 7,
     "& .MuiSwitch-switchBase": {
-      margin: 1,
+      margin: 0,
       padding: 0,
+      bottom: 0,
+      left: 0,
       transform: "translateX(6px)",
       "&.Mui-checked": {
         color: "#fff",
-        transform: "translateX(22px)",
+        transform: "translateX(30px)",
         "& .MuiSwitch-thumb:before": {
           backgroundImage: `url('https://img.icons8.com/external-becris-lineal-becris/14/ffffff/external-check-mintab-for-ios-becris-lineal-becris-1.png')`,
         },
@@ -34,9 +36,9 @@ export const Quote = () => {
       },
     },
     "& .MuiSwitch-thumb": {
-      backgroundColor: theme.palette.mode === "dark" ? "#003892" : "#001e3c",
-      width: 32,
-      height: 32,
+      backgroundColor: theme.palette.mode === "dark" ? "#00E676" : "#00E676",
+      width: 20,
+      height: 20,
       "&:before": {
         content: "''",
         position: "absolute",
@@ -63,7 +65,7 @@ export const Quote = () => {
           <div>
             <p>Insurer</p>
             <img
-              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/16/000000/external-filter-interface-kiranshastry-lineal-kiranshastry.png"
+              src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/16/ffffff/external-filter-interface-kiranshastry-lineal-kiranshastry.png"
               alt="filter img"
               style={{ margin: "0px 3px" }}
             />
@@ -73,7 +75,7 @@ export const Quote = () => {
             <div>
               <b>{filter.coverage}</b>
               <img
-                src="https://img.icons8.com/external-those-icons-lineal-those-icons/12/000000/external-down-arrows-those-icons-lineal-those-icons-1.png"
+                src="https://img.icons8.com/external-those-icons-lineal-those-icons/12/ffffff/external-down-arrows-those-icons-lineal-those-icons-1.png"
                 alt="arrow-down"
                 style={{ margin: "0px 3px" }}
               />
@@ -86,7 +88,7 @@ export const Quote = () => {
             <div>
               <b>{filter.coverTillAge}</b>
               <img
-                src="https://img.icons8.com/external-those-icons-lineal-those-icons/12/000000/external-down-arrows-those-icons-lineal-those-icons-1.png"
+                src="https://img.icons8.com/external-those-icons-lineal-those-icons/12/ffffff/external-down-arrows-those-icons-lineal-those-icons-1.png"
                 alt="arrow-down"
                 style={{ margin: "0px 3px" }}
               />
@@ -95,7 +97,7 @@ export const Quote = () => {
           <div>
             <p>Claim Settled</p>
             <img
-              src="https://img.icons8.com/pastel-glyph/18/000000/sorting-arrows--v1.png"
+              src="https://img.icons8.com/pastel-glyph/18/ffffff/sorting-arrows--v1.png"
               alt="up and down arrow"
               style={{ margin: "0px 3px" }}
             />
@@ -105,10 +107,12 @@ export const Quote = () => {
 
             <FormGroup>
               <FormControlLabel
-                control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-                label="Pay Yearly"
+                control={<MaterialUISwitch sx={{ m: 0 }} defaultChecked />}
+                label=""
               />
             </FormGroup>
+
+            <p>Pay Yearly</p>
           </div>
         </div>
 
