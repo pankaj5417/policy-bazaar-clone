@@ -6,17 +6,18 @@ import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
 import { PlanCard } from "./Components/planCard/PlanCard";
 import Planspage from "./Components/Insuranceplanpage/Planspage";
+import { QuotationPage } from "./pages/Quotations/QuotationPage";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* <Planspage /> */}
       {/* <PlanCard /> */}
       <Routes>
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
         <Route path="/user" element={<UseForm />}></Route>
-        <Route path="/quote" element={<Quote />}></Route>
+        <Route path="/quote" element={<QuotationPage />}></Route>
         <Route path="/details" element={<Details />}></Route>
       </Routes>
     </div>

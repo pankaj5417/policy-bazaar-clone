@@ -58,7 +58,7 @@ export const Quote = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="quote-container">
         <div className="header">
           <div>
             <p>Insurer</p>

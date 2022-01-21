@@ -1,0 +1,38 @@
+.adCard {
+    width: 300px;
+    height: fit-content;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: Poppins, sans-serif;
+    position: relative;
+}
+
+.adCard .content {
+    margin: 20px 0px;
+}
+
+.adCard p {
+    color: rgba(37, 56, 88, 0.8);
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
+.adCard > h3 {
+    margin: 0px;
+    font-size: 16px;
+    color: rgb(37, 56, 88);
+}
+
+.adCard > .knowMore {
+    margin: 10px 0px;
+    margin-bottom: 40px;
+}
+
+.adCard > .adImg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 180px;
+    z-index: -1;
+}

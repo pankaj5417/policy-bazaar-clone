@@ -1,9 +1,9 @@
-.container { 
+.quote-container { 
     justify-content: left;
     align-items: flex-start;
 }
 
-.container > .header {
+.quote-container > .header {
     font-family: Poppins, sans-serif;
     color: black;
     background: rgb(99,117,136);
@@ -16,7 +16,7 @@
 }
 
 
-.container > .header > div {
+.quote-container > .header > div {
     display: flex;
     width: 20%;
     padding: 0px 8px;
@@ -27,11 +27,11 @@
     justify-content: center;
 }
 
-.container > .header > div  > p {
+.quote-container > .header > div  > p {
     color: black;
 }
 
-.container > .header > div  > select {
+.quote-container > .header > div  > select {
     background-color: rgb(99,117,136);
     border: none;
     font-size: 11px;
@@ -40,11 +40,11 @@
     margin: "2px 10px"
 }
 
-.container .header div > div:nth-child(2) {
+.quote-container .header div > div:nth-child(2) {
     margin-left: 20px;
     display: flex;
 }
 
-.container .header > div:nth-child(5) {
+.quote-container .header > div:nth-child(5) {
     width: 27.5%;
 }
