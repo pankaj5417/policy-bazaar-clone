@@ -52,3 +52,15 @@
 .quote-container .header > div:nth-child(5) {
     width: 27.5%;
 }
+.lifeCover > div select {
+     background-color:rgb(99,117,136);
+     color:white;
+     outline: none;
+}
+.coverTillAge > div select {
+    background-color:rgb(99,117,136);
+    color:white;
+    font-size: 12px;
+    outline: none;
+
+}
