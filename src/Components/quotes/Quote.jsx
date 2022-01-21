@@ -3,6 +3,9 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import { PlanCard } from "../planCard/PlanCard";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getQuotesData } from "../../features/quotations/actionCreators";
 
 import("./Quote.css");
 
@@ -11,6 +14,20 @@ export const Quote = () => {
     coverage: "35 Lac",
     coverTillAge: "38 Yrs",
   };
+
+  const { loading, err, data } = useSelector((state) => ({
+    loading: state.quotes.isLoading,
+    err: state.quotes.isError,
+    data: state.quotes.quotes,
+  }));
+
+  console.log("data in quotes", data);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getQuotesData());
+  }, []);
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 52,
@@ -84,7 +101,6 @@ export const Quote = () => {
             </div>
           </div>
 
-
           {/* you need to append here */}
           <div className="coverTillAge">
             <div>Cover till age</div>
@@ -98,7 +114,6 @@ export const Quote = () => {
               />
             </div>
           </div>
-
 
           <div>
             <p>Claim Settled</p>
@@ -122,7 +137,9 @@ export const Quote = () => {
           </div>
         </div>
 
-        <PlanCard />
+        {data.map((e, i) => (
+          <PlanCard {...e} key={i} />
+        ))}
       </div>
     </>
   );

@@ -79,7 +79,7 @@ export const PlansPageHeader = () => {
             size : "small"
                   },
         }} id = "check" />
-            <label for="check">Save upto</label>
+            <label>Save upto</label>
  
         </Last>
       </Navbar2>

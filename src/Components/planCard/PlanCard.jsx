@@ -1,20 +1,6 @@
 import("./PlanCard.css");
 
-export const PlanCard = () => {
-  const data = {
-    insurerName: "Exide Life Insurance",
-    img: "http://static.pbcdn.in/term-cdn/images/images/insurer/exide_logo.png",
-    type: "Smart Term Edge Classic",
-    lifeCover: "4.6 Cr",
-    survivalBenefit: "11.01 Lac",
-    coverage: "28 Yrs",
-    maxLimit: "71 Yrs",
-    claimsSettled: "99.8%",
-    monthly: "₹11,697",
-    yearly: "₹1,33,681",
-    medicalSupport: "Physical Medical",
-    claimSettlementTime: "24 hrs",
-  };
+export const PlanCard = (data) => {
 
   return (
     <>

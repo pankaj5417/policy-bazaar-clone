@@ -6,10 +6,10 @@
 }
 
 .quotes-footer-container > div {
-    width: 570px;
+    width: 620px;
     height: fit-content;
     margin: auto;
     margin-top: 40px;
-    /* line-height: 1.16 rem; */
+    line-height: 1.16em;
 }
 

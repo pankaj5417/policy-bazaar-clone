@@ -42,7 +42,7 @@ export const QuotesFooter = () => {
 };
 
 const P = styled.p`
-  font-size: 10px;
+  font-size: 11px;
   color: rgba(85, 111, 123, 0.8);
   font-family: Poppins, sans-serif;
 `;

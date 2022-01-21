@@ -24,8 +24,8 @@ export const AdCard = () => {
       <h3>{data.title}</h3>
 
       <div className="content">
-        {data.content.map((e) => {
-          return <p>{e}</p>;
+        {data.content.map((e, i) => {
+          return <p key={i}>{e}</p>;
         })}
       </div>
 
