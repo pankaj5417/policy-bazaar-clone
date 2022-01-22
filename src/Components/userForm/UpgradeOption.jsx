@@ -28,7 +28,7 @@ import {TextField,
 import React from 'react';
 
 export const UpgradeOption=()=> {
-    const { control2 } = useFormContext();
+    //const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
         inputField: {

@@ -28,7 +28,7 @@ import {
   } from "react-hook-form";
 
  const UserForm=()=> {
-    const { control2 } = useFormContext();
+  //  const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -130,9 +130,9 @@ const control=useAnimation()
   <div>
      
      <div className="field">
-
+{/*
      <Controller
-        control={control2}
+      //  control={control2}
         name="username"
         render={({ field }) => (
             <FormControl  className={classes.formControl}>
@@ -152,8 +152,8 @@ const control=useAnimation()
         )}
       />
       </div>
-      {/*
-         <Controller control={control2}>
+      */}
+        
      <FormControl  className={classes.formControl}>
 
             <TextField
@@ -167,13 +167,13 @@ const control=useAnimation()
               onChange={handleChange}
             />
             </FormControl>
-            </Controller>
+           
                </div>
           
        
           <p>{formErrors.username}</p>
           <div className="field">
-          <Controller control={control2}>
+          
           <FormControl  className={classes.formControl}>
 
             <TextField
@@ -187,11 +187,11 @@ const control=useAnimation()
               onChange={handleChange}
             />
             </FormControl>
-            </Controller>
+            
           </div>
           <p>{formErrors.email}</p>
           <div className="field">
-          <Controller control={control2}>
+          
           <FormControl  className={classes.formControl}>
             <TextField
             id="standard-basic" 
@@ -204,10 +204,10 @@ const control=useAnimation()
               onChange={handleChange}
             />
             </FormControl>
-            </Controller>
+            
              </div>
           <p>{formErrors.password}</p>
-          <Controller control={control2}>
+          
           <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Occupation</InputLabel>
             <Select required onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
@@ -218,9 +218,9 @@ const control=useAnimation()
                 <option value="student">Student</option>
                 </Select>
          </FormControl>
-         </Controller>
+        
                 <br />
-                <Controller control={control2}>
+               
                 <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Education</InputLabel>
             <Select  onChange={handleChange}  MenuProps={MenuProps}  name="Education" id="education">
@@ -233,8 +233,8 @@ const control=useAnimation()
 
             </Select>
             </FormControl>
-            </Controller>
-      */}
+          
+      
             <br />
          
             

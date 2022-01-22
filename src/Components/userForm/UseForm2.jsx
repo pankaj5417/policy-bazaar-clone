@@ -29,7 +29,7 @@ import {TextField,
 import React from 'react';
 
 export const UseForm2=()=> {
-    const { control2 } = useFormContext();
+    //const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
