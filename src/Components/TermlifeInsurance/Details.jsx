@@ -37,7 +37,7 @@ const Details = () => {
 
     console.log("userDetails", userDetails);
     localStorage.setItem("basicUserDetails", JSON.stringify(userDetails));
-    navigate("/quote");
+    navigate("/quotationPage");
   };
 
   const handleDetails = () => {

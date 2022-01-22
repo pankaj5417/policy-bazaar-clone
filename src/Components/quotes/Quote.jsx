@@ -7,11 +7,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getQuotesData } from "../../features/quotations/actionCreators";
 import { useState } from "react";
+import FilterPop from "../FilterPop/FilterPop";
 
 import("./Quote.css");
 
 export const Quote = () => {
   const dispatch = useDispatch();
+  const [ vis, setVis] = useState(false)
+
+  let userName = JSON.parse(localStorage.getItem("basicUserDetails"));
+  userName = userName.name;
+
+  const [popup, setPopup] = useState({
+    content: "Premium payment type changed to",
+    title: userName,
+  });
+
+  // console.log(popup);
 
   const [payMonthly, setPayMonthly] = useState(false);
   const [range, setRange] = useState({
@@ -27,16 +39,41 @@ export const Quote = () => {
   }));
 
   const updateRange = (e) => {
+
     let newRange = {
       ...range,
       [e.target.name]: +e.target.value,
-    };
-
-    console.log("updateRange", newRange);
+    };  
+    setPopup({
+      content: "Life Cover Changed to",
+      title: `${e.target.value}`,
+    });
+    // console.log("updateRange", newRange);
     dispatch(getQuotesData(newRange));
+     setVis(true)
+     setTimeout(() =>{
+       setVis(false)
+     }, 5000)
   };
 
-  console.log("data in quotes", data);
+  const updateRange2 = (e) => {
+    let newRange = {
+      ...range,
+      [e.target.name]: +e.target.value,
+    };  
+    setPopup({
+      content: "Cover Till age Changed to",
+      title: `${e.target.value}`,
+    });
+    // console.log("updateRange", newRange);
+    dispatch(getQuotesData(newRange));
+    setVis(true)
+     setTimeout(() =>{
+       setVis(false)
+     }, 3000)
+  };
+
+  // console.log("data in quotes", data);
 
   useEffect(() => {
     dispatch(getQuotesData(range));
@@ -119,24 +156,24 @@ export const Quote = () => {
                 <option value="25">25 Lacs</option>
                 <option value="50">50 Lacs</option>
                 <option value="75">75 Lacs</option>
-                <option value="100">1 Crore</option>
+                <option value="1">1 Crore</option>
                 <option value="125">1.25 Crore</option>
-                <option value="150">1.5 Crore</option>
+                <option value="15">1.5 Crore</option>
                 <option value="175">1.75 Crore</option>
-                <option value="200">2 Crore</option>
+                <option value="2">2 Crore</option>
                 <option value="225">2.25 Crore</option>
                 <option value="250">2.50 Crore</option>
                 <option value="275">2.75 Crore</option>
-                <option value="300">3 Crore</option>
+                <option value="3">3 Crore</option>
                 <option value="325">3.25 Crore</option>
                 <option value="350">3.50 Crore</option>
                 <option value="375">3.75 Crore</option>
-                <option value="400">4 Crore</option>
+                <option value="4">4 Crore</option>
                 <option value="425">4.25 Crore</option>
                 <option value="450">4.50 Crore</option>
                 <option value="475">4.75 Crore</option>
-                <option value="500">5 Crore</option>
-                <option value="600">6 Crore</option>
+                <option value="5">5 Crore</option>
+                <option value="6">6 Crore</option>
               </select>
             </div>
           </div>
@@ -144,7 +181,7 @@ export const Quote = () => {
           <div className="coverTillAge">
             <div style={{ fontSize: "12px" }}>Cover till age</div>
             <div>
-              <select onChange={updateRange} name="coverage">
+              <select onChange={updateRange2} name="coverage">
                 <option value="32">32 Years</option>
                 <option value="33">33 Years</option>
                 <option value="34">34 Years</option>
@@ -196,9 +233,9 @@ export const Quote = () => {
             <p>Pay Monthly</p>
 
             <FormGroup
-              // onChange={() => {
-              //   setPayMonthly(!payMonthly);
-              // }}
+            // onChange={() => {
+            //   setPayMonthly(!payMonthly);
+            // }}
             >
               <FormControlLabel
                 control={<MaterialUISwitch sx={{ m: 0 }} />}
@@ -214,6 +251,10 @@ export const Quote = () => {
           <PlanCard {...e} payMonthly={payMonthly} key={i} />
         ))}
       </div>
+      {
+       vis ?
+      <FilterPop {...popup} /> : null
+      }
     </>
   );
 };

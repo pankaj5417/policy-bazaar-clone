@@ -26,7 +26,7 @@ export const quotesIsError = (e) => {
 
 export const getQuotesData = (range) => (dispatch) => {
   try {
-    dispatch(quotesIsLoading);
+    dispatch(quotesIsLoading());
 
     let sortType = range.claimsSettled ? "asc" : "desc";
     fetch(

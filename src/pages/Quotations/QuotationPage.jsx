@@ -4,6 +4,7 @@ import { AdCard } from "../../Components/ads/AdCard.jsx";
 
 import "./QuotationPage.css";
 import { QuotesFooter } from "../../Components/quotesFooter/Footer";
+import FilterPop from "../../Components/FilterPop/FilterPop";
 
 export const QuotationPage = () => {
   return (
@@ -13,6 +14,7 @@ export const QuotationPage = () => {
         <Quote />
         <AdCard />
       </div>
+       {/* <FilterPop /> */}
       <QuotesFooter />
     </>
   );
