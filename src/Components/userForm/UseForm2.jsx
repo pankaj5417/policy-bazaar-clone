@@ -19,9 +19,17 @@ import {TextField,
     Typography,
     Button,} from '@material-ui/core';
 
+    import {
+        useForm,
+        Controller,
+        FormProvider,
+        useFormContext,
+      } from "react-hook-form";
+
 import React from 'react';
 
 export const UseForm2=()=> {
+    const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -31,8 +39,9 @@ export const UseForm2=()=> {
         },
         formControl: {
             margin: theme.spacing(1),
-            minWidth: 320,
+            minWidth: 470,
             maxWidth: 400,
+            marginLeft:100
           },
           chips: {
             display: 'flex',
@@ -166,20 +175,24 @@ const control=useAnimation()
                 </Select>
          </FormControl>
                 <br />
-
+                <FormControl  className={classes.formControl}>
                <label>Is there any personal medical history of Heart Disease
                 / Open Chest CABG / Open Heart Replacement or repair of Heart valves /
                  Heart surgery / Angioplasty / Cardiomyopathy / Any Cancer / Stroke /
                   Brain Tumor / Muscular Dystrophy / Blindness / Organ Transplant?</label>
+                  </FormControl>
+                  <br />
                   
-                  <RadioGroup style={{display:"inline"}} onChange={handleChange}>
+                  <RadioGroup  className={classes.formControl} style={{display:"inline"}} onChange={handleChange}>
                       
 
-        <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-        <FormControlLabel value="no" control={<Radio />} label="No" />
+             <FormControlLabel  value="yes" control={<Radio />} label="Yes" />
+             <FormControlLabel  value="no" control={<Radio />} label="No" />
+        </RadioGroup>
         
+       
         
-      </RadioGroup>
+      
      
       
          

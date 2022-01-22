@@ -18,10 +18,17 @@ import {TextField,
     StepLabel,
     Typography,
     Button,} from '@material-ui/core';
+    import {
+        useForm,
+        Controller,
+        FormProvider,
+        useFormContext,
+      } from "react-hook-form";
 
 import React from 'react';
 
 export const UpgradeOption=()=> {
+    const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -121,8 +128,11 @@ const control=useAnimation()
   return (
   <div>
       <form onSubmit={handleSubmit} action="">
+          <div className="upgrade-container">
+          <div className="upgrade-plan">
+              <span>Plan Options</span>
      
-                  <RadioGroup onChange={handleChange}>
+      <RadioGroup onChange={handleChange}>
                       
 
             <FormControlLabel 
@@ -144,14 +154,18 @@ const control=useAnimation()
              year upto Rupee Icon 118368 " 
              value="10lakhplus"
              control={<Radio />}
-               
+               className="upgrade-radio-btn"
             />
+           
         
         
       </RadioGroup>
      
-      
-         
+      </div>
+      <div className="horizontal-line">
+
+    </div>
+      </div>
             </form>
   </div>
   )
