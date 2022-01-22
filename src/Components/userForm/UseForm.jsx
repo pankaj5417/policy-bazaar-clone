@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./UseForm.css";
+
 import { motion, useAnimation } from "framer-motion"
 import { makeStyles,useTheme } from '@material-ui/core/styles';
 import {TextField,
@@ -22,6 +23,7 @@ import UseForm1 from "./UseForm1";
 import UserForm from "./UserForm";
 import { UpgradeOption } from "./UpgradeOption";
 import { ReviewDetails } from "./reviewDetails";
+import Navbar from "./navbar";
 
     function UseForm() {
 
@@ -33,8 +35,9 @@ import { ReviewDetails } from "./reviewDetails";
         },
         formControl: {
             margin: theme.spacing(1),
-            minWidth: 320,
+            minWidth: 350,
             maxWidth: 400,
+            marginLeft:30
           },
           chips: {
             display: 'flex',
@@ -68,7 +71,8 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 450,
+      width: 360,
+      
     },
   },
 };
@@ -185,17 +189,38 @@ const [activeStep, setActiveStep] = useState(0);
   };
 
   return (
+    <div>
+
+    <Navbar/>
     <div className="container">
-      {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div className="ui message success">Signed in successfully</div>
-      ) : (
-        <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
-      )}
+
+     <div className="form-heading">
+       <div>
+       <span>Male</span>&nbsp;<span>|</span>&nbsp;<span>D O B:</span>&nbsp;
+       <span>03/06/1994</span>&nbsp;<span>|</span>&nbsp;<span>No Smoker</span>&nbsp;<span>|</span>&nbsp;<span>Phone no.</span>
+      
+
+       </div>
+      
+       
+
+     <div className="knowYourPlan">
+       <img  src="https://buylifeinsurance.policybazaar.com/ifplus/images/web/knowYourPlan.svg" alt="" />
+       <span>Know Your Plan in 2 min</span>
+     </div>
+     </div>
+    
 
       <form onSubmit={handleSubmit}>
         
         <div className="form-left-container">
         <div className="form-left">
+          <div className="">
+          <img src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/clientLogo.png" alt="kotakimg" />
+        <span> e-Term Life</span>
+          </div>
+          <div className="horizontal-line"></div>
+         
         <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Life Cover</InputLabel>
 
@@ -333,6 +358,7 @@ const [activeStep, setActiveStep] = useState(0);
           );
         })}
       </Stepper>
+      <div className="horizontal-line"></div>
       
           
         
@@ -368,7 +394,7 @@ const [activeStep, setActiveStep] = useState(0);
               <motion.div className="total-button-container "  
                animate={control}
                 onFocus={()=>{control.start({
-                  y:-20,
+                  y:-40,
                  transition:{duration:2}
                 })}}>
                   <div className="total-amount-container">
@@ -402,6 +428,7 @@ const [activeStep, setActiveStep] = useState(0);
         </div>
       
       </form>
+    </div>
     </div>
   );
 }

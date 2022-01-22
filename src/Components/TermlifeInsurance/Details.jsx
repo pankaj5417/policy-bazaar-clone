@@ -4,6 +4,9 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import Button from "@mui/material/Button";
 import Switch from "@mui/material/Switch";
+import { useDispatch } from "react-redux";
+import { postBasicDetails } from "../../features/basicDetails/actionCreators";
+import { useNavigate } from "react-router-dom";
 
 import React from "react";
 import("./Details.css");
@@ -11,11 +14,31 @@ import("./Details.css");
 const Details = () => {
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const [alignment, setAlignment] = React.useState("web");
+  const [name, setName] = React.useState("");
+  const [gender, setGender] = React.useState("Male");
+  const [dob, setDob] = React.useState("");
+  const [mobile, setMobile] = React.useState("");
+  const [details, setDetails] = React.useState(false);
+
+  const dispatch = useDispatch();
   const handleChange = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
 
-  const [details, setDetails] = React.useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    const userDetails = {
+      name,
+      dob,
+      mobile,
+      gender,
+    };
+
+    console.log("userDetails", userDetails);
+    localStorage.setItem("basicUserDetails", JSON.stringify(userDetails));
+    navigate("/quote");
+  };
 
   const handleDetails = () => {
     if (details) {
@@ -24,6 +47,7 @@ const Details = () => {
       setDetails(true);
     }
   };
+
   return (
     <div className="main">
       <div className="navbar1">
@@ -71,11 +95,15 @@ const Details = () => {
               color="primary"
               value={alignment}
               exclusive
-              onChange={handleChange}
+              onChange={(e) => {
+                setGender(e.target.value);
+                handleChange();
+              }}
+              name="gender"
             >
               <ToggleButton value="male">Male</ToggleButton>
               <ToggleButton value="female" className="female-btn">
-                FeMale
+                Female
               </ToggleButton>
             </ToggleButtonGroup>
             <br />
@@ -84,12 +112,18 @@ const Details = () => {
               label="Full Name"
               variant="outlined"
               placeholder="Enter Your Name"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
             />
             <TextField
               className="Name"
               label="Date of Birth"
               variant="outlined"
               placeholder="DD/MM/YYYY"
+              onChange={(e) => {
+                setDob(e.target.value);
+              }}
             />
             <TextField
               maxLength="10"
@@ -98,9 +132,19 @@ const Details = () => {
               label="Mobile Number"
               variant="outlined"
               placeholder="Your Mobile Number"
+              name="mobile"
+              onChange={(e) => {
+                setMobile(e.target.value);
+              }}
             />
             <br />
-            <Button variant="contained" className="Button">
+            <Button
+              variant="contained"
+              className="Button"
+              onClick={() => {
+                handleSubmit();
+              }}
+            >
               View Free Quotes →
             </Button>
           </form>

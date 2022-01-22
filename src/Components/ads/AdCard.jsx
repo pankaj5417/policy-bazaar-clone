@@ -10,22 +10,18 @@ export const AdCard = () => {
       "Unbiased & Certified advisors",
       "One click easy refunds",
     ],
-    img: "",
+    img: "http://termlife.policybazaar.com/family_adv.bfefdf35861e99b3d3dd.png",
   };
 
   return (
     <div className="adCard">
-      <img
-        src="https://termlife.policybazaar.com/family_adv.bfefdf35861e99b3d3dd.png"
-        alt="ad img"
-        className="adImg"
-      />
+      <img src={data.img} alt="ad img" className="adImg" />
 
       <h3>{data.title}</h3>
 
       <div className="content">
-        {data.content.map((e) => {
-          return <p>{e}</p>;
+        {data.content.map((e, i) => {
+          return <p key={i}>{e}</p>;
         })}
       </div>
 

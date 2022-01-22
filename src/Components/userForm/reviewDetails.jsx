@@ -127,11 +127,11 @@ export const ReviewDetails = () => {
         <div className="navbar-container">
           <div className="navbar-container-mid">
             <img
-              className="policybaazar-logo"
+              className="policybaazar-logo cursor"
               src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/pbLogo.svg"
               alt=""
             />
-            <div className="navbar-right">
+            <div className="navbar-right cursor">
               <img
                 src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/callingIcon.svg"
                 alt=""

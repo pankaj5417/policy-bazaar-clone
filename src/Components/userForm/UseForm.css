@@ -1,20 +1,16 @@
- 
+.container {
+  height: 100vh;
+  min-width: 700px;
+  width: 100%;
+  margin: auto;
+  border: 1px solid black;
+}
   
-  .container {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    min-width: 700px;
-    width: 100%;
-    margin: auto;
-    border: 1px solid black;
-  }
+  
   .container > form {
       display: flex;
-      margin: 10px;
-    width: 70%;
+      margin: auto;
+    width: 80%;
     border: 1px solid #dfdfdf;
     padding: 20px;
     height: 96vh;
@@ -22,10 +18,26 @@
     background: #fff;
     border: 1px solid black;
   }
-  pre {
-    width: 70%;
-    color: #fff;
-    font-size: larger;
+  .knowYourPlan{
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+       border-radius: 4px;
+     text-align: left;
+    color: #ffffff;
+    background: #0065ff;
+    cursor: pointer;
+    height: 36px;
+  }
+  .form-heading{
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   button {
@@ -35,19 +47,18 @@
   #occupation, #education{
       width: 250px;
   }
- TextField{
-  width: 600px;
-}
+ 
   .form-left-container{
-    width: 37%;
+    width: 35%;
     border: 1px solid lightgray;
     border-radius: 4px;
     background-color: white;
   }
 
   .form-right-container{
-    margin-left: 30px;
-    width: 60%;
+    margin-left: 10px;
+    padding: 5px;
+    width: 64%;
     border: 1px solid lightgray;
     border-radius: 4px;
     background-color: white;
@@ -57,108 +68,47 @@
     height: 1px;
     background-color: black;
   }
+  .horizontal-line{
+    width: 100%;
+    height: 0.1px;
+    margin-top: 8px;
+    background-color: lightgray;
+
+  }
    .total-button-container{
-     width: 95%;
-     margin: auto;
+     width: 710px;
+     height: 80px;
+    bottom: 0;
+     position:fixed;
+     z-index: 3;
      border: 1px solid lightgray;
      padding: 10px;
      border-radius: 4px;
      display: flex;
+     align-items: center;
      justify-content: space-between;
    }
    .button-container>Button{
     width: 200px;
+    height: 50px;
+    z-index: 3;
      padding: 5px;
      background-color:red !important;
      color: white;
    }
-   .button-container>Button:hover .arrow-symbol{
-     display: block;
-     transition: 1s ease-in;
-     animation: ease-in 1s;
-   }
-   .arrow-symbol{
-     display: none;
-   }
    
-div > .container {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  min-width: 700px;
-  width: 100%;
-  margin: auto;
-  border: 1px solid black;
-}
-.container > form {
-  display: flex;
-  margin: 10px;
-  width: 70%;
-  border: 1px solid #dfdfdf;
-  padding: 20px;
-  height: 96vh;
-  border-radius: 5px;
-  background: #fff;
-  border: 1px solid black;
-}
-pre {
-  width: 70%;
-  color: #fff;
-  font-size: larger;
-}
 
-button {
-  background: #0563b4;
-}
-#occupation,
-#education {
-  width: 250px;
-}
-
-.form-left-container {
-  width: 37%;
-  border: 1px solid lightgray;
-  border-radius: 4px;
-  background-color: white;
-}
-
-.form-right-container {
-  margin-left: 30px;
-  width: 60%;
-  border: 1px solid lightgray;
-  border-radius: 4px;
-  background-color: white;
-}
-.hr-line {
-  width: 150px;
-  height: 1px;
-  background-color: black;
-}
-.total-button-container {
-  width: 95%;
-  margin: auto;
-  border: 1px solid lightgray;
-  padding: 10px;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-}
-.button-container > Button {
-  width: 200px;
-  padding: 5px;
-  background-color: red !important;
-  color: white;
-}
-.button-container > Button:hover .arrow-symbol {
-  display: block;
-  transition: 1s ease-in;
-  animation: ease-in 1s;
-}
-.arrow-symbol {
-  display: none;
-}
-.total-button-container:hover {
-  width: 100%;
+.total-button-container ::-webkit-scrollbar {
+  position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 97%;
+    margin: auto;
+    z-index: 9;
+    background: #fff;
+    
+    
+  
+   
 }
