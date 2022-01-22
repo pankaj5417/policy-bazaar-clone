@@ -19,13 +19,32 @@ import {TextField,
     Typography,
     Button,} from '@material-ui/core';
 import { UseForm2 } from "./UseForm2";
-import UseForm1 from "./UseForm1";
 import UserForm from "./UserForm";
 import { UpgradeOption } from "./UpgradeOption";
 import { ReviewDetails } from "./reviewDetails";
 import Navbar from "./navbar";
 
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+
     function UseForm() {
+
+        const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" ,pincode:"",city:"",nationality:"",medicalhistory:"",planOptions:""};
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+//   const { step, navigation } = useStep({
+//     steps,
+//     initialStep: 0,
+//   });
+
+const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+const props = { formValues,setFormValues,handleChange };
+
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -84,11 +103,11 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <UserForm/>  ;
+      return <UserForm {...props}/>  ;
     case 1:
-      return <UseForm2/>;
+      return <UseForm2 {...props}/>;
       case 2:
-        return <UpgradeOption/>
+        return <UpgradeOption {...props}/>
     case 3:
       return '';
     default:
@@ -145,24 +164,21 @@ const [activeStep, setActiveStep] = useState(0);
 
   const control=useAnimation()
 
-  const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" };
-  const [formValues, setFormValues] = useState(initialValues);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormValues({ ...formValues, [name]: value });
-  };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
-    handleNext()
-    setIsSubmit(true);
+  //  handleNext()
+   // setIsSubmit(true);
+    <ReviewDetails {...props}/>
    
   };
-
+const handleData=(e)=>{
+    e.preventDefault()
+     
+}
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -211,7 +227,7 @@ const [activeStep, setActiveStep] = useState(0);
      </div>
     
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleData}>
         
         <div className="form-left-container">
         <div className="form-left">
@@ -368,7 +384,8 @@ const [activeStep, setActiveStep] = useState(0);
       {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>
-              All steps completed - you&apos;re finished
+                {handleSubmit}
+             
             </Typography>
             <Button onClick={handleReset} className={classes.button}>
               Reset
@@ -405,9 +422,9 @@ const [activeStep, setActiveStep] = useState(0);
                   <Button
                 variant="contained"
                 color="primary"
-                onClick={handleSubmit}
+                onClick={handleNext}
                 className={classes.button}
-               
+                 type="submit"
               >
                 {activeStep === steps.length - 1 ? 'Finish' : 'Proceed '}	&#x279C;
               </Button>
