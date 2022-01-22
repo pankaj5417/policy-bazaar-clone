@@ -27,7 +27,9 @@ import {
     useFormContext,
   } from "react-hook-form";
 
- const UserForm=()=> {
+ const UserForm=({formValues,setFormValues,handleChange})=> {
+    const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+     console.log(formValues)
   //  const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
@@ -81,17 +83,18 @@ const MenuProps = {
 
 
 const control=useAnimation()
-
+/*
   const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" };
   const [formValues, setFormValues] = useState(initialValues);
+  */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
+/*
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-
+*/
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -163,7 +166,7 @@ const control=useAnimation()
               name="username"
               required
              // placeholder="Full Name as per your ID Proof"
-              value={formValues.username}
+              value={username}
               onChange={handleChange}
             />
             </FormControl>
@@ -183,7 +186,7 @@ const control=useAnimation()
               name="email"
               required
              // placeholder="Email Address"
-              value={formValues.email}
+              value={email}
               onChange={handleChange}
             />
             </FormControl>
@@ -200,7 +203,7 @@ const control=useAnimation()
               name="income"
               required
              // placeholder="Annual Income"
-              value={formValues.income}
+              value={income}
               onChange={handleChange}
             />
             </FormControl>
