@@ -44,9 +44,11 @@ export const Quote = () => {
       ...range,
       [e.target.name]: +e.target.value,
     };  
+
+    let title = e.target.value > 99 ? `${e.target.value/100} Crore` : `${e.target.value} Lac`;
     setPopup({
       content: "Life Cover Changed to",
-      title: `${e.target.value}`,
+      title: title
     });
     // console.log("updateRange", newRange);
     dispatch(getQuotesData(newRange));
@@ -63,7 +65,7 @@ export const Quote = () => {
     };  
     setPopup({
       content: "Cover Till age Changed to",
-      title: `${e.target.value}`,
+      title: `${e.target.value} Yrs`,
     });
     // console.log("updateRange", newRange);
     dispatch(getQuotesData(newRange));
@@ -156,24 +158,24 @@ export const Quote = () => {
                 <option value="25">25 Lacs</option>
                 <option value="50">50 Lacs</option>
                 <option value="75">75 Lacs</option>
-                <option value="1">1 Crore</option>
+                <option value="100">1 Crore</option>
                 <option value="125">1.25 Crore</option>
                 <option value="15">1.5 Crore</option>
                 <option value="175">1.75 Crore</option>
-                <option value="2">2 Crore</option>
+                <option value="200">2 Crore</option>
                 <option value="225">2.25 Crore</option>
                 <option value="250">2.50 Crore</option>
                 <option value="275">2.75 Crore</option>
-                <option value="3">3 Crore</option>
+                <option value="300">3 Crore</option>
                 <option value="325">3.25 Crore</option>
                 <option value="350">3.50 Crore</option>
                 <option value="375">3.75 Crore</option>
-                <option value="4">4 Crore</option>
+                <option value="400">4 Crore</option>
                 <option value="425">4.25 Crore</option>
                 <option value="450">4.50 Crore</option>
                 <option value="475">4.75 Crore</option>
-                <option value="5">5 Crore</option>
-                <option value="6">6 Crore</option>
+                <option value="500">5 Crore</option>
+                <option value="600">6 Crore</option>
               </select>
             </div>
           </div>
