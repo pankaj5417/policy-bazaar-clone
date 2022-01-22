@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const FilterPop = () => {
+const FilterPop = ({}) => {
+
   return (
     <>
       <Pop>

@@ -14,7 +14,7 @@ export const QuotationPage = () => {
         <Quote />
         <AdCard />
       </div>
-       <FilterPop />
+       {/* <FilterPop /> */}
       <QuotesFooter />
     </>
   );

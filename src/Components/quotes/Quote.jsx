@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getQuotesData } from "../../features/quotations/actionCreators";
 import { useState } from "react";
+import FilterPop from "../FilterPop/FilterPop";
 
 import("./Quote.css");
 
@@ -214,6 +215,7 @@ export const Quote = () => {
           <PlanCard {...e} payMonthly={payMonthly} key={i} />
         ))}
       </div>
+      <FilterPop />
     </>
   );
 };
