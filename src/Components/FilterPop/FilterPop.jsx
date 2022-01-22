@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const FilterPop = ({}) => {
-
+const FilterPop = (props) => {
   return (
     <>
       <Pop>
@@ -10,11 +9,11 @@ const FilterPop = ({}) => {
           src="https://termlife.policybazaar.com/assets/images/toast-tick.svg"
           alt=""
         />
-        <span>Premium payment type changed to 
+        <span>
+          {props.content}
           <br />
-        <strong>shailendra</strong>
+          <strong>{props.title}</strong>
         </span>
-        
       </Pop>
     </>
   );
@@ -36,12 +35,12 @@ const Pop = styled.div`
   // transition: transform 0.5s ease;
   right: 50px;
   border-left: 5px solid green;
-  img{
-     margin : 15px;
+  img {
+    margin: 15px;
   }
-    span{
-      margin:13px;
-    }
+  span {
+    margin: 13px;
+  }
 `;
 
 export default FilterPop;

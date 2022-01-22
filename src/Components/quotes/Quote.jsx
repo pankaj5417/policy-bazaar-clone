@@ -14,6 +14,16 @@ import("./Quote.css");
 export const Quote = () => {
   const dispatch = useDispatch();
 
+  let userName = JSON.parse(localStorage.getItem("basicUserDetails"));
+  userName = userName.name;
+
+  const [popup, setPopup] = useState({
+    content: "Premium payment type changed to",
+    title: userName,
+  });
+
+  console.log(popup);
+
   const [payMonthly, setPayMonthly] = useState(false);
   const [range, setRange] = useState({
     lifeCover: 100,
@@ -32,6 +42,11 @@ export const Quote = () => {
       ...range,
       [e.target.name]: +e.target.value,
     };
+
+    setPopup({
+      content: "Life Cover Changed to",
+      title: `${e.target.value} Yrs`,
+    });
 
     console.log("updateRange", newRange);
     dispatch(getQuotesData(newRange));
@@ -197,9 +212,9 @@ export const Quote = () => {
             <p>Pay Monthly</p>
 
             <FormGroup
-              // onChange={() => {
-              //   setPayMonthly(!payMonthly);
-              // }}
+            // onChange={() => {
+            //   setPayMonthly(!payMonthly);
+            // }}
             >
               <FormControlLabel
                 control={<MaterialUISwitch sx={{ m: 0 }} />}
@@ -215,7 +230,8 @@ export const Quote = () => {
           <PlanCard {...e} payMonthly={payMonthly} key={i} />
         ))}
       </div>
-      <FilterPop />
+
+      <FilterPop {...popup} />
     </>
   );
 };
