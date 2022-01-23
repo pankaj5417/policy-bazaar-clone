@@ -22,7 +22,10 @@ import {
 
 import React from "react";
 
-export const ReviewDetails = () => {
+export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
+
+    const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+
   const useStyles = makeStyles((theme) => ({
     inputField: {
       width: "100%",
@@ -72,7 +75,7 @@ export const ReviewDetails = () => {
   };
 
   const control = useAnimation();
-
+/*
   const initialValues = {
     username: "",
     email: "",
@@ -83,14 +86,15 @@ export const ReviewDetails = () => {
     CoverFor: "",
   };
   const [formValues, setFormValues] = useState(initialValues);
+  */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
+/*
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-
+*/
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -174,18 +178,18 @@ export const ReviewDetails = () => {
                 <ul>
                   <li>
                     <div class="review-Detail-left">First Name:</div>
-                    <div class="reviewFormRightDetail">pankaj kumar</div>
+                    <div class="reviewFormRightDetail">{username}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Email:</div>
                     <div class="reviewFormRightDetail">
-                      mr.pankajkumar1994@gmail.com
+                     {email}
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Annual Income:</div>
                     <div class="reviewFormRightDetail">
-                      &nbsp;<span class="formattedAmt">₹ 20000000</span>
+                      &nbsp;<span class="formattedAmt">₹ {income}</span>
                     </div>
                   </li>
                   <li>

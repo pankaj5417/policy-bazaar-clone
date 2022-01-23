@@ -19,9 +19,19 @@ import {TextField,
     Typography,
     Button,} from '@material-ui/core';
 
+    import {
+        useForm,
+        Controller,
+        FormProvider,
+        useFormContext,
+      } from "react-hook-form";
+
 import React from 'react';
 
-export const UseForm2=()=> {
+export const UseForm2=({formValues,setFormValues,handleChange})=> {
+    const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+    console.log(formValues)
+    
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -31,8 +41,9 @@ export const UseForm2=()=> {
         },
         formControl: {
             margin: theme.spacing(1),
-            minWidth: 320,
+            minWidth: 470,
             maxWidth: 400,
+            marginLeft:100
           },
           chips: {
             display: 'flex',
@@ -73,17 +84,18 @@ const MenuProps = {
 
 
 const control=useAnimation()
-
+/*
   const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" };
   const [formValues, setFormValues] = useState(initialValues);
+  */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
+/*
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-
+*/
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -129,7 +141,7 @@ const control=useAnimation()
             id="standard-basic" 
             label="Pincode"
               type="text"
-              name="username"
+              name="pincode"
              // placeholder="Full Name as per your ID Proof"
               value={formValues.pincode}
               onChange={handleChange}
@@ -146,7 +158,7 @@ const control=useAnimation()
             id="standard-basic" 
             label="City"
               type="text"
-              name="email"
+              name="city"
              // placeholder="Email Address"
               value={formValues.city}
               onChange={handleChange}
@@ -159,27 +171,31 @@ const control=useAnimation()
 
           <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Nationality</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
-                <option value="" selected>Occupation</option>
-                <option value="salaried">Resident Indian</option>
+            <Select  onChange={handleChange}  MenuProps={MenuProps} name="nationality" id="nationality">
+                <option value="" selected>Nationality</option>
+                <option value="residentIndian">Resident Indian</option>
                
                 </Select>
          </FormControl>
                 <br />
-
+                <FormControl  className={classes.formControl}>
                <label>Is there any personal medical history of Heart Disease
                 / Open Chest CABG / Open Heart Replacement or repair of Heart valves /
                  Heart surgery / Angioplasty / Cardiomyopathy / Any Cancer / Stroke /
                   Brain Tumor / Muscular Dystrophy / Blindness / Organ Transplant?</label>
+                  </FormControl>
+                  <br />
                   
-                  <RadioGroup style={{display:"inline"}} onChange={handleChange}>
+                  <RadioGroup  className={classes.formControl} name="medicalhistory" style={{display:"inline"}} onChange={handleChange}>
                       
 
-        <FormControlLabel value="yes" control={<Radio />} label="Yes" />
-        <FormControlLabel value="no" control={<Radio />} label="No" />
+             <FormControlLabel  value="yes" control={<Radio />} label="Yes" />
+             <FormControlLabel  value="no" control={<Radio />} label="No" />
+        </RadioGroup>
         
+       
         
-      </RadioGroup>
+      
      
       
          

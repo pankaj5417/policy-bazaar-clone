@@ -13,6 +13,7 @@ import("./Quote.css");
 
 export const Quote = () => {
   const dispatch = useDispatch();
+  const [ vis, setVis] = useState(false)
 
   let userName = JSON.parse(localStorage.getItem("basicUserDetails"));
   userName = userName.name;
@@ -22,7 +23,7 @@ export const Quote = () => {
     title: userName,
   });
 
-  console.log(popup);
+  // console.log(popup);
 
   const [payMonthly, setPayMonthly] = useState(false);
   const [range, setRange] = useState({
@@ -38,21 +39,43 @@ export const Quote = () => {
   }));
 
   const updateRange = (e) => {
+
     let newRange = {
       ...range,
       [e.target.name]: +e.target.value,
-    };
+    };  
 
+    let title = e.target.value > 99 ? `${e.target.value/100} Crore` : `${e.target.value} Lac`;
     setPopup({
       content: "Life Cover Changed to",
-      title: `${e.target.value} Yrs`,
+      title: title
     });
-
-    console.log("updateRange", newRange);
+    // console.log("updateRange", newRange);
     dispatch(getQuotesData(newRange));
+     setVis(true)
+     setTimeout(() =>{
+       setVis(false)
+     }, 5000)
   };
 
-  console.log("data in quotes", data);
+  const updateRange2 = (e) => {
+    let newRange = {
+      ...range,
+      [e.target.name]: +e.target.value,
+    };  
+    setPopup({
+      content: "Cover Till age Changed to",
+      title: `${e.target.value} Yrs`,
+    });
+    // console.log("updateRange", newRange);
+    dispatch(getQuotesData(newRange));
+    setVis(true)
+     setTimeout(() =>{
+       setVis(false)
+     }, 3000)
+  };
+
+  // console.log("data in quotes", data);
 
   useEffect(() => {
     dispatch(getQuotesData(range));
@@ -137,7 +160,7 @@ export const Quote = () => {
                 <option value="75">75 Lacs</option>
                 <option value="100">1 Crore</option>
                 <option value="125">1.25 Crore</option>
-                <option value="150">1.5 Crore</option>
+                <option value="15">1.5 Crore</option>
                 <option value="175">1.75 Crore</option>
                 <option value="200">2 Crore</option>
                 <option value="225">2.25 Crore</option>
@@ -160,7 +183,7 @@ export const Quote = () => {
           <div className="coverTillAge">
             <div style={{ fontSize: "12px" }}>Cover till age</div>
             <div>
-              <select onChange={updateRange} name="coverage">
+              <select onChange={updateRange2} name="coverage">
                 <option value="32">32 Years</option>
                 <option value="33">33 Years</option>
                 <option value="34">34 Years</option>
@@ -230,8 +253,10 @@ export const Quote = () => {
           <PlanCard {...e} payMonthly={payMonthly} key={i} />
         ))}
       </div>
-
-      <FilterPop {...popup} />
+      {
+       vis ?
+      <FilterPop {...popup} /> : null
+      }
     </>
   );
 };

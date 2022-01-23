@@ -18,10 +18,19 @@ import {TextField,
     StepLabel,
     Typography,
     Button,} from '@material-ui/core';
+    import {
+        useForm,
+        Controller,
+        FormProvider,
+        useFormContext,
+      } from "react-hook-form";
 
 import React from 'react';
 
-export const UpgradeOption=()=> {
+export const UpgradeOption=({formValues,setFormValues,handleChange})=> {
+
+    const {username,email, income,occupation, education,lifeCover, CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+console.log(formValues)
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -73,17 +82,18 @@ const MenuProps = {
 
 
 const control=useAnimation()
-
+/*
   const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" };
   const [formValues, setFormValues] = useState(initialValues);
+  */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
+/*
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-
+*/
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -120,9 +130,11 @@ const control=useAnimation()
 
   return (
   <div>
-      <form onSubmit={handleSubmit} action="">
+          <div className="upgrade-container">
+          <div className="upgrade-plan">
+              <span>Plan Options</span>
      
-                  <RadioGroup onChange={handleChange}>
+      <RadioGroup name="planOptions" onChange={handleChange}>
                       
 
             <FormControlLabel 
@@ -144,15 +156,19 @@ const control=useAnimation()
              year upto Rupee Icon 118368 " 
              value="10lakhplus"
              control={<Radio />}
-               
+               className="upgrade-radio-btn"
             />
+           
         
         
       </RadioGroup>
      
-      
-         
-            </form>
+      </div>
+      <div className="horizontal-line">
+
+    </div>
+      </div>
+          
   </div>
   )
 }

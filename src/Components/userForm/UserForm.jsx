@@ -20,8 +20,17 @@ import {TextField,
     Button,} from '@material-ui/core';
 
 import React from 'react';
+import {
+    useForm,
+    Controller,
+    FormProvider,
+    useFormContext,
+  } from "react-hook-form";
 
- const UserForm=()=> {
+ const UserForm=({formValues,setFormValues,handleChange})=> {
+    const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+     console.log(formValues)
+  //  const { control2 } = useFormContext();
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
@@ -74,17 +83,18 @@ const MenuProps = {
 
 
 const control=useAnimation()
-
+/*
   const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" };
   const [formValues, setFormValues] = useState(initialValues);
+  */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-
+/*
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-
+*/
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -121,8 +131,32 @@ const control=useAnimation()
 
   return (
   <div>
-      <form onSubmit={handleSubmit} action="">
+     
      <div className="field">
+{/*
+     <Controller
+      //  control={control2}
+        name="username"
+        render={({ field }) => (
+            <FormControl  className={classes.formControl}>
+
+            <TextField
+            id="standard-basic" 
+            label="Full Name as per your ID Proof"
+              type="text"
+              
+              required
+             // placeholder="Full Name as per your ID Proof"
+              value={formValues.username}
+              onChange={handleChange}
+              {...field}
+            />
+            </FormControl>
+        )}
+      />
+      </div>
+      */}
+        
      <FormControl  className={classes.formControl}>
 
             <TextField
@@ -130,16 +164,19 @@ const control=useAnimation()
             label="Full Name as per your ID Proof"
               type="text"
               name="username"
+              required
              // placeholder="Full Name as per your ID Proof"
-              value={formValues.username}
+              value={username}
               onChange={handleChange}
             />
             </FormControl>
+           
                </div>
           
        
           <p>{formErrors.username}</p>
           <div className="field">
+          
           <FormControl  className={classes.formControl}>
 
             <TextField
@@ -147,32 +184,36 @@ const control=useAnimation()
             label="Email Address"
               type="text"
               name="email"
+              required
              // placeholder="Email Address"
-              value={formValues.email}
+              value={email}
               onChange={handleChange}
             />
             </FormControl>
+            
           </div>
           <p>{formErrors.email}</p>
           <div className="field">
-
+          
           <FormControl  className={classes.formControl}>
             <TextField
             id="standard-basic" 
             label="Annual Income"
               type="number"
               name="income"
+              required
              // placeholder="Annual Income"
-              value={formValues.income}
+              value={income}
               onChange={handleChange}
             />
             </FormControl>
+            
              </div>
           <p>{formErrors.password}</p>
-
+          
           <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Occupation</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
+            <Select required onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
                 <option value="" selected>Occupation</option>
                 <option value="salaried">Salaried</option>
                 <option value="self-employed">Self Employed</option>
@@ -180,8 +221,9 @@ const control=useAnimation()
                 <option value="student">Student</option>
                 </Select>
          </FormControl>
+        
                 <br />
-
+               
                 <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Education</InputLabel>
             <Select  onChange={handleChange}  MenuProps={MenuProps}  name="Education" id="education">
@@ -194,9 +236,11 @@ const control=useAnimation()
 
             </Select>
             </FormControl>
+          
+      
             <br />
          
-            </form>
+            
   </div>
   )
 }
