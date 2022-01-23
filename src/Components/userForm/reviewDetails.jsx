@@ -146,7 +146,7 @@ console.log(data)
 
  return (
     <>
-    { data.map((d)=>(
+    { data.map((d)=>(d.id===data.length?
       <div className="Review-Container">
         <div className="navbar-container">
           <div className="navbar-container-mid">
@@ -203,34 +203,34 @@ console.log(data)
                   <li>
                     <div class="review-Detail-left">Email:</div>
                     <div class="reviewFormRightDetail">
-                     
+                     {d.email}
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Annual Income:</div>
                     <div class="reviewFormRightDetail">
-                      &nbsp;<span class="formattedAmt">₹ </span>
+                      &nbsp;<span class="formattedAmt">₹{d.income} </span>
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Occupation:</div>
                     <div class="reviewFormRightDetail">
-                      <span id="lblOccupation">Salaried</span>
+                      <span id="lblOccupation">{d.occupation}</span>
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Education:</div>
                     <div class="reviewFormRightDetail">
-                      Post-Graduate &amp; Above
+                      {d.education} &amp; Above
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">PIN Code:</div>
-                    <div class="reviewFormRightDetail">800001</div>
+                    <div class="reviewFormRightDetail">{d.pincode}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">City:</div>
-                    <div class="reviewFormRightDetail">Phulwari</div>
+                    <div class="reviewFormRightDetail">{d.city}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Nationality:</div>
@@ -356,7 +356,7 @@ console.log(data)
           </div>
         </div>
       </div>    
-    ))
+   :"" ))
 }
     </>
   )
