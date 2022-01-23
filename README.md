@@ -1,5 +1,7 @@
 
 # Policy Bazaar - clone
+We were a team of 5 from the Masai Web-12 batch who worked on cloning the Policy Bazaar website as part of our Unit-5 construct week. As a team, we were given a project to clone the Policy Bazaar website. Our project demonstrates a basic flow of an e-commerce page, where a user can Apply for any Insurance like life-insurance , car insurance with a best price
+and can get some offers.
 
 <img src="">
 
