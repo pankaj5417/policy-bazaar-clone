@@ -4,11 +4,9 @@ import "./";
 import Details from "./Components/TermlifeInsurance/Details";
 import UseForm from "./Components/userForm/UseForm";
 import { Quote } from "./Components/quotes/Quote";
-import { PlanCard } from "./Components/planCard/PlanCard";
-import Planspage from "./Components/Insuranceplanpage/Planspage";
-import UserForm from "./Components/userForm/UserForm";
 import { ReviewDetails } from "./Components/userForm/reviewDetails";
 import { QuotationPage } from "./pages/Quotations/QuotationPage";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   return (
@@ -24,6 +22,7 @@ function App() {
         <Route path="/quote" element={<Quote />}></Route>
         <Route path="/quotationPage" element={<QuotationPage />}></Route>
         <Route path="/details" element={<Details />}></Route>
+        <Route path="/payment" element={<Payment />}></Route>
       </Routes>
     </>
   );
