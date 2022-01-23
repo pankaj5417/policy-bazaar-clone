@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
 
     function UseForm() {
 
-        const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" ,pincode:"",city:"",nationality:"",medicalhistory:"",planOptions:""};
+        const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" ,paymentMode:"",pincode:"",city:"",nationality:"",medicalhistory:"",planOptions:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -368,7 +368,7 @@ const handleData=(e)=>{
 
             <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Mode of Premium Payment</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="premiumPayment" >
+            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="paymentMode" >
                 <option value="monthly">Monthly</option>
                 <option value="yearly">Yearly</option>
                 
