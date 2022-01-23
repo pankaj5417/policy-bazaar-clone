@@ -132,7 +132,7 @@ const control=useAnimation()
 
   return (
   <div>
-      <form onSubmit={handleSubmit} action="">
+     {/* <form onSubmit={handleSubmit} action="">*/}
 
      <div className="field">
      <FormControl  className={classes.formControl}>
@@ -199,7 +199,7 @@ const control=useAnimation()
      
       
          
-            </form>
+           {/*</form> */} 
   </div>
   )
 }

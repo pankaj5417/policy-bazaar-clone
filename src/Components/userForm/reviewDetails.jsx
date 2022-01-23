@@ -94,7 +94,7 @@ export const ReviewDetails = ({ formValues, setFormValues, handleChange }) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
-*/
+  */
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormErrors(validate(formValues));
@@ -142,9 +142,6 @@ export const ReviewDetails = ({ formValues, setFormValues, handleChange }) => {
     return errors;
   };
 
-  //console.log(d.username)
-  // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=d
-
   return (
     <>
       {data.map((d) => (
@@ -166,13 +163,52 @@ export const ReviewDetails = ({ formValues, setFormValues, handleChange }) => {
               </div>
             </div>
           </div>
-          <div className="review-bottom-container">
-            <div className="review-heading-container">
-              <div>
-                <img
-                  src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/clientLogo.png"
-                  alt=""
-                />
+          <div className="review-container">
+            <div class="reviewAllDetails">
+              <div class="d-flex align-items-center">
+                <div class="reviewTitle">Personal Info</div>
+              </div>
+              <div class="reviewFormDetails">
+                <ul>
+                  <li>
+                    <div class="review-Detail-left">First Name:</div>
+                    <div class="reviewFormRightDetail">{d.username}</div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">Email:</div>
+                    <div class="reviewFormRightDetail">{d.email}</div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">Annual Income:</div>
+                    <div class="reviewFormRightDetail">
+                      &nbsp;<span class="formattedAmt">₹{d.income} </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">Occupation:</div>
+                    <div class="reviewFormRightDetail">
+                      <span id="lblOccupation">{d.occupation}</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">Education:</div>
+                    <div class="reviewFormRightDetail">
+                      {d.education} &amp; Above
+                    </div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">PIN Code:</div>
+                    <div class="reviewFormRightDetail">{d.pincode}</div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">City:</div>
+                    <div class="reviewFormRightDetail">{d.city}</div>
+                  </li>
+                  <li>
+                    <div class="review-Detail-left">Nationality:</div>
+                    <div class="reviewFormRightDetail">Indian</div>
+                  </li>
+                </ul>
               </div>
 
               <div>
@@ -191,6 +227,7 @@ export const ReviewDetails = ({ formValues, setFormValues, handleChange }) => {
                 <span className="review-heading-right">Kotak Life e-Term</span>
               </div>
             </div>
+
             <div className="review-container">
               <div className="reviewAllDetails">
                 <div className="d-flex align-items-center">
@@ -339,7 +376,7 @@ export const ReviewDetails = ({ formValues, setFormValues, handleChange }) => {
                   />
                 }
                 label="
-        I Agree to the terms and conditions"
+                I Agree to the terms and conditions"
               />
 
               <div className="bottom-container">

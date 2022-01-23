@@ -30,7 +30,7 @@ import { Link } from "react-router-dom";
 
     function UseForm() {
 
-        const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" ,pincode:"",city:"",nationality:"",medicalhistory:"",planOptions:""};
+        const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" ,paymentMode:"",pincode:"",city:"",nationality:"",medicalhistory:"",planOptions:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -110,7 +110,7 @@ function getStepContent(step) {
       case 2:
         return <UpgradeOption {...props}/>
     case 3:
-      return <ReviewDetails {...props}/>
+      return ''
     default:
       return '';
   }
@@ -166,7 +166,7 @@ const [activeStep, setActiveStep] = useState(0);
   const control=useAnimation()
 
 
-  useEffect(()=>{
+ /* useEffect(()=>{
     getFormData()
 },[])
    
@@ -176,12 +176,12 @@ const [activeStep, setActiveStep] = useState(0);
         setFormValues(res)
     })
 }
-  const addFormData=()=>{
+*/
+  
+const addFormData=()=>{
     const payload=formValues
         
-    
-
-    fetch("http://localhost:3003/userDetails",{
+     fetch("http://localhost:3003/userDetails",{
         method:"POST",
         body:JSON.stringify(payload),
         headers:{
@@ -189,23 +189,23 @@ const [activeStep, setActiveStep] = useState(0);
 
         }
     }).then(()=>{
-       // getTodo()
+       
     })
 }
   
 
   
   const handleSubmit = (e) => {
-   // e.preventDefault();
+    e.preventDefault();
   //  setFormErrors(validate(formValues));
-  //  handleNext()
+  
    // setIsSubmit(true);
-    //return <Navigate to={`/review`}></Navigate>
    
   };
 const handleData=(e)=>{
-    addFormData()
-    e.preventDefault()
+    
+   e.preventDefault()
+   addFormData()
      
 }
   useEffect(() => {
@@ -368,7 +368,7 @@ const handleData=(e)=>{
 
             <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Mode of Premium Payment</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="premiumPayment" >
+            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="paymentMode" >
                 <option value="monthly">Monthly</option>
                 <option value="yearly">Yearly</option>
                 
@@ -413,6 +413,7 @@ const handleData=(e)=>{
       {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>
+              
             <Navigate to={`/review`}></Navigate>;
              
             </Typography>
@@ -452,6 +453,7 @@ const handleData=(e)=>{
                 variant="contained"
                 color="primary"
                 onClick={handleNext}
+               
                 className={classes.button}
                  type="submit"
               >
