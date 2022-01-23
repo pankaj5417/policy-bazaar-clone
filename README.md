@@ -25,9 +25,6 @@ You can also run the project live using <a href="">Policy Bazaar</a> link.
 <hr>
 
 
-
-<hr>
-
 ## Sneak Peak
 
 #### Home Page:
