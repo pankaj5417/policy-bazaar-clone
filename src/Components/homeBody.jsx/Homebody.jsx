@@ -17,6 +17,7 @@ import Paper from "@mui/material/Paper";
 import { PbAdvantage } from "../Pbadvantage/PbAdvantage";
 import { SlideCorousel1 } from "../Carousel/Carousel1";
 import { SlidesCarousel2 } from "../Carousel/Corousel2";
+
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
