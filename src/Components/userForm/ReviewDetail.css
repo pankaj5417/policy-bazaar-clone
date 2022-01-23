@@ -336,3 +336,7 @@
 .cursor{
     cursor: pointer;
 }
+.payment-link{
+   color: white;
+   text-decoration: none;
+}

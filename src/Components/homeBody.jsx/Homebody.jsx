@@ -39,10 +39,10 @@ function Homebody() {
           <div>
             <video
               width="700"
-              autoplay=""
+              autoPlay=""
               muted
               loop
-              playsinline
+              playsInline
               preload="metadata"
               className="home-img2"
             >

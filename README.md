@@ -1,74 +1,57 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Policy Bazaar - clone
+We were a team of 5 from the Masai Web-12 batch who worked on cloning the Policy Bazaar website as part of our Unit-5 construct week. As a team, we were given a project to clone the Policy Bazaar website. Our project demonstrates a basic flow of an e-commerce page, where a user can Apply for any Insurance like life-insurance , car insurance etc with a best price
+and can get some offers.
 
-## Available Scripts
+<img src="https://user-images.githubusercontent.com/89926084/150676449-9bbd6976-ccdf-48be-b2c6-4275a029134c.png">
 
-In the project directory, you can run:
+>  This is our construct week project at Masai-School in which we have created a clone of <a href="https://policybazaar.com/">Policy Bazaar</a> . 
 
-### `npm start`
+<hr>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack:
+- #### React
+- #### Redux
+- #### CSS
+- #### Material UI
+- #### Json-Server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<hr>
 
-### `npm test`
+## Deployment 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can also run the project live using <a href="">Policy Bazaar</a> link.
 
-### `npm run build`
+<hr>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Sneak Peak
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Home Page:
+<img src="https://user-images.githubusercontent.com/89926084/150676449-9bbd6976-ccdf-48be-b2c6-4275a029134c.png" />
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Life Insurance page:
+<img src="https://user-images.githubusercontent.com/89926084/150676505-552db8ef-0a04-4114-b0fb-80988008e1c4.png" />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### Life Insurance Planspage:
+<img src="https://user-images.githubusercontent.com/89926084/150676526-0399b92a-d6b1-465d-9c8a-aeffe2f12d5f.png" />
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+#### User Details:
+<img src="https://user-images.githubusercontent.com/89926084/150676574-5b92b8a4-b90d-4973-9c6e-3566780de889.png" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Review Page:
+<img src = "https://user-images.githubusercontent.com/89926084/150676554-e728d07e-abc4-4589-b093-e7d1e048685f.png" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Checkout Page:
+<img src="https://user-images.githubusercontent.com/89926084/150676591-eb3af389-cd9f-4b88-b50d-eb52dd2b2691.png" />
 
 
 
 
+<hr/>
+
+  
