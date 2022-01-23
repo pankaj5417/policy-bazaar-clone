@@ -83,6 +83,7 @@ export const PlansPageHeader = () => {
             id="check"
           />
           <label>Save upto</label>
+          <img src="https://termlife.policybazaar.com/save-upto.df2f3d1d47ca4d9b0688.svg" alt="" />
         </Last>
       </Navbar2>
     </div>
@@ -166,18 +167,29 @@ const Middle = styled.div`
 
 const Last = styled.div`
   width: 130px;
-  height: 18px;
+  height: 15px;
   display: flex;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
   margin-right: 7%;
   border: 1px solid orange;
-  padding: 10px;
-  margin-top: 0.5%;
+  padding: 7px 0px;
+  margin-top: 0.8%;
   border-radius: 5px;
+ 
   label {
     width: 100%;
     color: orange;
     cursor: pointer;
+    box-sizing: border-box;
+    margin:-4px;
+  }
+  img{
+    width: 50px;
+    height: 40px;
+    margin-right: -16px;
+  } 
+  img:after{ 
+    animation: rotation 5s linear infinite;
   }
 `;
