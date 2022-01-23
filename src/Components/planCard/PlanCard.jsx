@@ -44,7 +44,12 @@ export const PlanCard = (data) => {
         </div>
 
         <div className="price">
-          <div className="priceBtn">
+          <div
+            className="priceBtn"
+            onClick={() => {
+              window.location.href = "/user";
+            }}
+          >
             <h4>₹{data.monthly}</h4>
             <div>
               <img
