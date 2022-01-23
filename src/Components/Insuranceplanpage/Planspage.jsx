@@ -84,6 +84,7 @@ export const PlansPageHeader = () => {
           />
           <label>Save upto</label>
           <img src="https://termlife.policybazaar.com/save-upto.df2f3d1d47ca4d9b0688.svg" alt="" />
+          <strong>50%</strong>
         </Last>
       </Navbar2>
     </div>
@@ -191,5 +192,11 @@ const Last = styled.div`
   } 
   img:after{ 
     animation: rotation 5s linear infinite;
+  }
+  strong{
+     position:absolute;
+     color:white;
+     right:80px;
+     font-size:15px;
   }
 `;
