@@ -17,7 +17,7 @@ import Paper from "@mui/material/Paper";
 import { PbAdvantage } from "../Pbadvantage/PbAdvantage";
 import { SlideCorousel1 } from "../Carousel/Carousel1";
 import { SlidesCarousel2 } from "../Carousel/Corousel2";
-
+import { Link } from "react-router-dom";
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(1),
@@ -109,10 +109,12 @@ function Homebody() {
             </div>
             <div className="home-tol">
               <img src={umre} alt="one" />
-              <p className="home-tm">Term Life Insurance </p>
-              <p className="home-tm1-5">
-                <spam className="home-dot"> </spam> Covers covid-19
-              </p>
+              <Link to={"/user"}>
+                <p className="home-tm">Term Life Insurance </p>
+                <p className="home-tm1-5">
+                  <spam className="home-dot"> </spam> Covers covid-19
+                </p>
+              </Link>
             </div>
             <div className="home-tol">
               <img src={box} alt="one" />
