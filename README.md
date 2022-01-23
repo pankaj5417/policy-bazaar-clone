@@ -44,11 +44,11 @@ You can also run the project live using <a href="">Policy Bazaar</a> link.
 #### User Details:
 <img src="" />
 
-#### Product Cart Page:
+#### Review Page:
 <img src = "" />
 
 
-#### Payment Page:
+#### Checkout Page:
 <img src="" />
 
 
