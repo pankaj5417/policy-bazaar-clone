@@ -275,22 +275,22 @@ console.log(data)
                   <li>
                     <div class="review-Detail-left">Life Cover:</div>
                     <div class="reviewFormRightDetail">
-                      &nbsp;<span id="LifeCover">₹ 10000000</span>
+                      &nbsp;<span id="LifeCover">₹ {d.lifeCover}</span>
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Cover for:</div>
-                    <div class="reviewFormRightDetail">57 Years</div>
+                    <div class="reviewFormRightDetail">{d.CoverFor}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Pay for:</div>
-                    <div class="reviewFormRightDetail">30 Years</div>
+                    <div class="reviewFormRightDetail">{d.payFor}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">
                       Mode of premium payment:
                     </div>
-                    <div class="reviewFormRightDetail">Monthly</div>
+                    <div class="reviewFormRightDetail">{d.paymentMode}</div>
                   </li>
                 </ul>
               </div>
