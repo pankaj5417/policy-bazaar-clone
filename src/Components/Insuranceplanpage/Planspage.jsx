@@ -19,9 +19,12 @@ export const PlansPageHeader = () => {
           <div>
             <UL>
               <li>{data.gender} | </li>
-              <li>{data.age} yrs | </li>
+              <li>
+                {new Date().getFullYear() - data.dob.split("/").map(Number)[2]}{" "}
+                yrs |{" "}
+              </li>
               <li>{data.smoker ? "Smoker" : "Non-Smoker"} | </li>
-              <li>{data.income} lac | </li>
+              <li>10 - 15 lac | </li>
               <span style={{ color: "blue" }}>EDIT</span>
             </UL>
           </div>
@@ -83,7 +86,10 @@ export const PlansPageHeader = () => {
             id="check"
           />
           <label>Save upto</label>
-          <img src="https://termlife.policybazaar.com/save-upto.df2f3d1d47ca4d9b0688.svg" alt="" />
+          <img
+            src="https://termlife.policybazaar.com/save-upto.df2f3d1d47ca4d9b0688.svg"
+            alt=""
+          />
           <strong>50%</strong>
         </Last>
       </Navbar2>
@@ -177,26 +183,26 @@ const Last = styled.div`
   padding: 7px 0px;
   margin-top: 0.8%;
   border-radius: 5px;
- 
+
   label {
     width: 100%;
     color: orange;
     cursor: pointer;
     box-sizing: border-box;
-    margin:-4px;
+    margin: -4px;
   }
-  img{
+  img {
     width: 50px;
     height: 40px;
     margin-right: -16px;
-  } 
-  img:after{ 
+  }
+  img:after {
     animation: rotation 5s linear infinite;
   }
-  strong{
-     position:absolute;
-     color:white;
-     right:80px;
-     font-size:15px;
+  strong {
+    position: absolute;
+    color: white;
+    right: 80px;
+    font-size: 15px;
   }
 `;

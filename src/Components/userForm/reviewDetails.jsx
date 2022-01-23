@@ -22,9 +22,8 @@ import {
 
 import React from "react";
 
-export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
-
-   // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+export const ReviewDetails = ({ formValues, setFormValues, handleChange }) => {
+  // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
 
   const useStyles = makeStyles((theme) => ({
     inputField: {
@@ -75,7 +74,7 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
   };
 
   const control = useAnimation();
-/*
+  /*
   const initialValues = {
     username: "",
     email: "",
@@ -89,8 +88,8 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
   */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [data,setData]=useState([])
-/*
+  const [data, setData] = useState([]);
+  /*
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -101,21 +100,23 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
   };
-useEffect(()=>{
-getFormData()
-},[])
 
-    const getFormData=()=>{
-    fetch(`http://localhost:3003/userDetails `)
-    .then((d)=>d.json()).then((res)=>{
-        console.log(res)
-        setData(res)
-    })
-}
-//getFormData()
-console.log(data)
+  useEffect(() => {
+    getFormData();
+  }, []);
 
-/*
+  const getFormData = () => {
+    fetch(`http://localhost:3001/userDetails `)
+      .then((d) => d.json())
+      .then((res) => {
+        console.log(res);
+        setData(res);
+      });
+  };
+  //getFormData()
+  console.log(data);
+
+  /*
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -140,225 +141,222 @@ console.log(data)
 
     return errors;
   };
- 
-    //console.log(d.username)
-   // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=d
 
- return (
+  //console.log(d.username)
+  // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=d
+
+  return (
     <>
-    { data.map((d)=>(
-      <div className="Review-Container">
-        <div className="navbar-container">
-          <div className="navbar-container-mid">
-            <img
-              className="policybaazar-logo cursor"
-              src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/pbLogo.svg"
-              alt=""
-            />
-            <div className="navbar-right cursor">
+      {data.map((d) => (
+        <div className="Review-Container">
+          <div className="navbar-container">
+            <div className="navbar-container-mid">
               <img
-                src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/callingIcon.svg"
-                alt=""
-              />&nbsp;
-              <span>Talk to an Expert</span>
-            </div>
-          </div>
-        </div>
-        <div className="review-bottom-container">
-          <div className="review-heading-container">
-            <div>
-              <img
-                src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/clientLogo.png"
+                className="policybaazar-logo cursor"
+                src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/pbLogo.svg"
                 alt=""
               />
+              <div className="navbar-right cursor">
+                <img
+                  src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/callingIcon.svg"
+                  alt=""
+                />
+                &nbsp;
+                <span>Talk to an Expert</span>
+              </div>
             </div>
+          </div>
+          <div className="review-bottom-container">
+            <div className="review-heading-container">
+              <div>
+                <img
+                  src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/clientLogo.png"
+                  alt=""
+                />
+              </div>
 
-            <div>
-              <span className="review-heading">
-                Please review below details before proceeding ahead
+              <div>
+                <span className="review-heading">
+                  Please review below details before proceeding ahead
+                </span>
+                <p className="review-heading2">
+                  These cannot be changed at a later stage
+                </p>
+              </div>
+              <div className="review-heading-right-container">
+                <img
+                  src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/termIcon.svg"
+                  alt=""
+                />
+                <span className="review-heading-right">Kotak Life e-Term</span>
+              </div>
+            </div>
+            <div className="review-container">
+              <div className="reviewAllDetails">
+                <div className="d-flex align-items-center">
+                  <div className="reviewTitle">Personal Info</div>
+                </div>
+                <div className="reviewFormDetails">
+                  <ul>
+                    <li>
+                      <div className="review-Detail-left">First Name:</div>
+                      <div className="reviewFormRightDetail">{d.username}</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Email:</div>
+                      <div className="reviewFormRightDetail"></div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Annual Income:</div>
+                      <div className="reviewFormRightDetail">
+                        &nbsp;<span className="formattedAmt">₹ </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Occupation:</div>
+                      <div className="reviewFormRightDetail">
+                        <span id="lblOccupation">Salaried</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Education:</div>
+                      <div className="reviewFormRightDetail">
+                        Post-Graduate &amp; Above
+                      </div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">PIN Code:</div>
+                      <div className="reviewFormRightDetail">800001</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">City:</div>
+                      <div className="reviewFormRightDetail">Phulwari</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Nationality:</div>
+                      <div className="reviewFormRightDetail">Indian</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="reviewAllDetails">
+                <div className="d-flex align-items-center">
+                  <div className="reviewTitle">Profile Details</div>
+                </div>
+                <div className="reviewFormDetails">
+                  <ul>
+                    <li>
+                      <div className="review-Detail-left">Gender:</div>
+                      <div className="reviewFormRightDetail">Male</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Date of Birth:</div>
+                      <div className="reviewFormRightDetail">03/06/1994</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Tobacco User:</div>
+                      <div className="reviewFormRightDetail">No</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Phone Number</div>
+                      <div className="reviewFormRightDetail">82******49</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="reviewAllDetails">
+                <div className="d-flex align-items-center">
+                  <div className="reviewTitle">Plan Info</div>
+                </div>
+                <div className="reviewFormDetails">
+                  <ul>
+                    <li>
+                      <div className="review-Detail-left">Life Cover:</div>
+                      <div className="reviewFormRightDetail">
+                        &nbsp;<span id="LifeCover">₹ 10000000</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Cover for:</div>
+                      <div className="reviewFormRightDetail">57 Years</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">Pay for:</div>
+                      <div className="reviewFormRightDetail">30 Years</div>
+                    </li>
+                    <li>
+                      <div className="review-Detail-left">
+                        Mode of premium payment:
+                      </div>
+                      <div className="reviewFormRightDetail">Monthly</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    // checked={state.checkedB}
+                    onChange={handleChange}
+                    name="checkedB"
+                    color="primary"
+                  />
+                }
+                label="I hereby consent to receive communication from Kotak e-Term or Its authorized representatives through"
+              />
+              <span>
+                <img
+                  src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/whatsapp-icon.svg"
+                  alt=""
+                />
+                &nbsp;Whatsapp on
               </span>
-              <p className="review-heading2">
-                These cannot be changed at a later stage
-              </p>
-            </div>
-            <div className="review-heading-right-container">
-              <img
-                src="	https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/termIcon.svg"
-                alt=""
+
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    // checked={state.checkedB}
+                    onChange={handleChange}
+                    name="checkedB"
+                    disabled
+                    color="primary"
+                  />
+                }
+                label="I agree to opt for Auto Debit for all the future premium payments of this policy"
               />
-              <span className="review-heading-right">Kotak Life e-Term</span>
-            </div>
-          </div>
-          <div className="review-container">
-            <div class="reviewAllDetails">
-              <div class="d-flex align-items-center">
-                <div class="reviewTitle">Personal Info</div>
-              </div>
-              <div class="reviewFormDetails">
-                <ul>
-                  <li>
-                    <div class="review-Detail-left">First Name:</div>
-                    <div class="reviewFormRightDetail">{d.username}</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Email:</div>
-                    <div class="reviewFormRightDetail">
-                     
-                    </div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Annual Income:</div>
-                    <div class="reviewFormRightDetail">
-                      &nbsp;<span class="formattedAmt">₹ </span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Occupation:</div>
-                    <div class="reviewFormRightDetail">
-                      <span id="lblOccupation">Salaried</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Education:</div>
-                    <div class="reviewFormRightDetail">
-                      Post-Graduate &amp; Above
-                    </div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">PIN Code:</div>
-                    <div class="reviewFormRightDetail">800001</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">City:</div>
-                    <div class="reviewFormRightDetail">Phulwari</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Nationality:</div>
-                    <div class="reviewFormRightDetail">Indian</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="reviewAllDetails">
-              <div class="d-flex align-items-center">
-                <div class="reviewTitle">Profile Details</div>
-              </div>
-              <div class="reviewFormDetails">
-                <ul>
-                  <li>
-                    <div class="review-Detail-left">Gender:</div>
-                    <div class="reviewFormRightDetail">Male</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Date of Birth:</div>
-                    <div class="reviewFormRightDetail">03/06/1994</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Tobacco User:</div>
-                    <div class="reviewFormRightDetail">No</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Phone Number</div>
-                    <div class="reviewFormRightDetail">82******49</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="reviewAllDetails">
-              <div class="d-flex align-items-center">
-                <div class="reviewTitle">Plan Info</div>
-              </div>
-              <div class="reviewFormDetails">
-                <ul>
-                  <li>
-                    <div class="review-Detail-left">Life Cover:</div>
-                    <div class="reviewFormRightDetail">
-                      &nbsp;<span id="LifeCover">₹ 10000000</span>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Cover for:</div>
-                    <div class="reviewFormRightDetail">57 Years</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">Pay for:</div>
-                    <div class="reviewFormRightDetail">30 Years</div>
-                  </li>
-                  <li>
-                    <div class="review-Detail-left">
-                      Mode of premium payment:
-                    </div>
-                    <div class="reviewFormRightDetail">Monthly</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <FormControlLabel
-              control={
-                <Checkbox
-                  // checked={state.checkedB}
-                  onChange={handleChange}
-                  name="checkedB"
-                  color="primary"
-                />
-              }
-              label="I hereby consent to receive communication from Kotak e-Term or Its authorized representatives through"
-            />
-            <span>
-              <img
-                src="https://buylifeinsurance.policybazaar.com/KotakeTermNew/images/web/whatsapp-icon.svg"
-                alt=""
-              />
-              &nbsp;Whatsapp on
-            </span>
-
-            <FormControlLabel
-              control={
-                <Checkbox
-                  // checked={state.checkedB}
-                  onChange={handleChange}
-                  name="checkedB"
-                  disabled
-                  color="primary"
-                />
-              }
-              label="I agree to opt for Auto Debit for all the future premium payments of this policy"
-            />
-            <br />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  // checked={state.checkedB}
-                  onChange={handleChange}
-                  name="checkedB"
-                  disabled
-                  color="primary"
-                />
-              }
-              label="
+              <br />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    // checked={state.checkedB}
+                    onChange={handleChange}
+                    name="checkedB"
+                    disabled
+                    color="primary"
+                  />
+                }
+                label="
         I Agree to the terms and conditions"
-            />
+              />
 
-            <div className="bottom-container">
-              <div className="total-premium">
-                <h3>Total Premium</h3>
-              </div>
+              <div className="bottom-container">
+                <div className="total-premium">
+                  <h3>Total Premium</h3>
+                </div>
 
-              <div className="checkout-btn">
-                <Button variant="contained" onClick={handleSubmit}>
-                  Checkout
-                </Button>
+                <div className="checkout-btn">
+                  <Button variant="contained" onClick={handleSubmit}>
+                    Checkout
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>    
-    ))
-}
+      ))}
     </>
-  )
-
+  );
 };
