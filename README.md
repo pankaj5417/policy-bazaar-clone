@@ -3,7 +3,7 @@
 
 <img src="">
 
->  This is our first construct week project at Masai-School in which we have created a clone of <a href="https://policybazaar.com/">Policy Bazaar</a> . 
+>  This is our construct week project at Masai-School in which we have created a clone of <a href="https://policybazaar.com/">Policy Bazaar</a> . 
 
 <hr>
 
