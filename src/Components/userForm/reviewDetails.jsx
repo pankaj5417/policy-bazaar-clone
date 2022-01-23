@@ -24,7 +24,7 @@ import React from "react";
 
 export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
 
-    const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+   // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
 
   const useStyles = makeStyles((theme) => ({
     inputField: {
@@ -89,6 +89,7 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
   */
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [data,setData]=useState([])
 /*
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -100,13 +101,28 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
     setFormErrors(validate(formValues));
     setIsSubmit(true);
   };
+useEffect(()=>{
+getFormData()
+},[])
 
+    const getFormData=()=>{
+    fetch(`http://localhost:3003/userDetails `)
+    .then((d)=>d.json()).then((res)=>{
+        console.log(res)
+        setData(res)
+    })
+}
+//getFormData()
+console.log(data)
+
+/*
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
       console.log(formValues);
     }
   }, [formErrors]);
+  */
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -124,9 +140,13 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
 
     return errors;
   };
+ 
+    //console.log(d.username)
+   // const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=d
 
-  return (
+ return (
     <>
+    { data.map((d)=>(
       <div className="Review-Container">
         <div className="navbar-container">
           <div className="navbar-container-mid">
@@ -178,18 +198,18 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
                 <ul>
                   <li>
                     <div class="review-Detail-left">First Name:</div>
-                    <div class="reviewFormRightDetail">{username}</div>
+                    <div class="reviewFormRightDetail">{d.username}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Email:</div>
                     <div class="reviewFormRightDetail">
-                     {email}
+                     
                     </div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Annual Income:</div>
                     <div class="reviewFormRightDetail">
-                      &nbsp;<span class="formattedAmt">₹ {income}</span>
+                      &nbsp;<span class="formattedAmt">₹ </span>
                     </div>
                   </li>
                   <li>
@@ -335,7 +355,10 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
             </div>
           </div>
         </div>
-      </div>
+      </div>    
+    ))
+}
     </>
-  );
+  )
+
 };

@@ -19,7 +19,7 @@ function App() {
         {/* all public and private routes be declared here*/}
         <Route path="/" element={<Home />}></Route>
         <Route path="/user" element={<UseForm />}></Route>
-        <Route path="/user/review" element={<ReviewDetails />}></Route>
+        <Route path="/review" element={<ReviewDetails />}></Route>
 
         <Route path="/quote" element={<Quote />}></Route>
         <Route path="/quotationPage" element={<QuotationPage />}></Route>

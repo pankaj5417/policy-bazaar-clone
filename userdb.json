@@ -1,0 +1,76 @@
+{
+  "userDetails": [
+    {
+      "username": "madhuban541@gmail.com",
+      "email": "madhuban541@gmail.com",
+      "income": "122343245",
+      "Occupation": "self-employed",
+      "Education": "postgraduate",
+      "lifeCover": "50lakh",
+      "CoverFor": "35years",
+      "payFor": "10years",
+      "premiumPayment": "monthly",
+      "pincode": "800001",
+      "city": "BHAGALPUR",
+      "nationality": "residentIndian",
+      "medicalhistory": "no",
+      "id": 2
+    },
+    {
+      "0": {
+        "username": "madhuban541@gmail.com",
+        "email": "madhuban541@gmail.com",
+        "income": "122343245",
+        "Occupation": "self-employed",
+        "Education": "postgraduate",
+        "lifeCover": "50lakh",
+        "CoverFor": "35years",
+        "payFor": "10years",
+        "premiumPayment": "monthly",
+        "pincode": "800001",
+        "city": "BHAGALPUR",
+        "nationality": "residentIndian",
+        "medicalhistory": "no",
+        "id": 2
+      },
+      "username": "madhuban541@gmail.com",
+      "email": "madhuban541@gmail.com",
+      "income": "345345",
+      "Occupation": "self-employed",
+      "Education": "postgraduate",
+      "lifeCover": "50lakh",
+      "CoverFor": "34years",
+      "id": 3
+    },
+    {
+      "0": {
+        "username": "madhuban541@gmail.com",
+        "email": "madhuban541@gmail.com",
+        "income": "122343245",
+        "Occupation": "self-employed",
+        "Education": "postgraduate",
+        "lifeCover": "50lakh",
+        "CoverFor": "35years",
+        "payFor": "10years",
+        "premiumPayment": "monthly",
+        "pincode": "800001",
+        "city": "BHAGALPUR",
+        "nationality": "residentIndian",
+        "medicalhistory": "no",
+        "id": 2
+      },
+      "username": "madhuban541@gmail.com",
+      "email": "madhuban541@gmail.com",
+      "income": "345345",
+      "Occupation": "self-employed",
+      "Education": "postgraduate",
+      "lifeCover": "50lakh",
+      "CoverFor": "34years",
+      "pincode": "800001",
+      "city": "BHAGALPUR",
+      "nationality": "residentIndian",
+      "medicalhistory": "yes",
+      "id": 4
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./UseForm.css";
+import { Navigate, useParams } from "react-router-dom";
 
 import { motion, useAnimation } from "framer-motion"
 import { makeStyles,useTheme } from '@material-ui/core/styles';
@@ -109,7 +110,7 @@ function getStepContent(step) {
       case 2:
         return <UpgradeOption {...props}/>
     case 3:
-      return '';
+      return <ReviewDetails {...props}/>
     default:
       return '';
   }
@@ -164,18 +165,46 @@ const [activeStep, setActiveStep] = useState(0);
 
   const control=useAnimation()
 
+
+  useEffect(()=>{
+    getFormData()
+},[])
+   
+    const getFormData=()=>{
+    fetch(`http://localhost:3003/userDetails `)
+    .then((d)=>d.json()).then((res)=>{
+        setFormValues(res)
+    })
+}
+  const addFormData=()=>{
+    const payload=formValues
+        
+    
+
+    fetch("http://localhost:3003/userDetails",{
+        method:"POST",
+        body:JSON.stringify(payload),
+        headers:{
+            "content-type":"application/json"
+
+        }
+    }).then(()=>{
+       // getTodo()
+    })
+}
   
 
   
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
+   // e.preventDefault();
+  //  setFormErrors(validate(formValues));
   //  handleNext()
    // setIsSubmit(true);
-    <ReviewDetails {...props}/>
+    //return <Navigate to={`/review`}></Navigate>
    
   };
 const handleData=(e)=>{
+    addFormData()
     e.preventDefault()
      
 }
@@ -384,7 +413,7 @@ const handleData=(e)=>{
       {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>
-                {handleSubmit}
+            <Navigate to={`/review`}></Navigate>;
              
             </Typography>
             <Button onClick={handleReset} className={classes.button}>
