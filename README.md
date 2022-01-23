@@ -3,7 +3,7 @@
 We were a team of 5 from the Masai Web-12 batch who worked on cloning the Policy Bazaar website as part of our Unit-5 construct week. As a team, we were given a project to clone the Policy Bazaar website. Our project demonstrates a basic flow of an e-commerce page, where a user can Apply for any Insurance like life-insurance , car insurance etc with a best price
 and can get some offers.
 
-<img src="">
+<img src="https://user-images.githubusercontent.com/89926084/150676449-9bbd6976-ccdf-48be-b2c6-4275a029134c.png">
 
 >  This is our construct week project at Masai-School in which we have created a clone of <a href="https://policybazaar.com/">Policy Bazaar</a> . 
 
