@@ -91,6 +91,10 @@
     grid-template-columns: 90% 10%;
 }
 
+.card .priceBtn:hover {
+    box-shadow: 0 1px 30px #ff4500;
+}
+
 .card .priceBtn h4 {
     margin: 0px;
 }
