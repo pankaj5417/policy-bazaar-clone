@@ -21,6 +21,7 @@ import {
 } from "@material-ui/core";
 
 import React from "react";
+import { Link, Navigate } from "react-router-dom";
 
 export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
 
@@ -96,11 +97,8 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
     setFormValues({ ...formValues, [name]: value });
   };
 */
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(formValues));
-    setIsSubmit(true);
-  };
+  
+
 useEffect(()=>{
 getFormData()
 },[])
@@ -348,8 +346,8 @@ console.log(data)
               </div>
 
               <div className="checkout-btn">
-                <Button variant="contained" onClick={handleSubmit}>
-                  Checkout
+                <Button variant="contained" >
+                <Link className="payment-link" to={`/payment`}>Checkout</Link> 
                 </Button>
               </div>
             </div>
