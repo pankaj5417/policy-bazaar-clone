@@ -104,7 +104,7 @@ getFormData()
 },[])
 
     const getFormData=()=>{
-    fetch(`http://localhost:3003/userDetails `)
+    fetch(`http://localhost:3001/userDetails `)
     .then((d)=>d.json()).then((res)=>{
         console.log(res)
         setData(res)

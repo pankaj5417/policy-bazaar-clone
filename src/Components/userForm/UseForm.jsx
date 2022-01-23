@@ -181,7 +181,7 @@ const [activeStep, setActiveStep] = useState(0);
 const addFormData=()=>{
     const payload=formValues
         
-     fetch("http://localhost:3003/userDetails",{
+     fetch("http://localhost:3001/userDetails",{
         method:"POST",
         body:JSON.stringify(payload),
         headers:{
