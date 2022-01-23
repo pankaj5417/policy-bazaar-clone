@@ -109,7 +109,7 @@ function Homebody() {
             </div>
             <div className="home-tol">
               <img src={umre} alt="one" />
-              <Link to={"/user"}>
+              <Link to={"/details"}>
                 <p className="home-tm">Term Life Insurance </p>
                 <p className="home-tm1-5">
                   <spam className="home-dot"> </spam> Covers covid-19
