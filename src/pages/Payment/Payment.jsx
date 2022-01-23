@@ -7,8 +7,15 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "./Payment.css";
+import { useState } from "react";
+import { OrderCompletePopup } from "../../Components/OrderCompletePopup/OrderCompletePopup";
 
 function Payment() {
+  const [isOpen, setIsOpen] = useState(false);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <Navbar />
@@ -110,7 +117,7 @@ function Payment() {
             <div className="pay-button-md">
               <button
                 onClick={() => {
-                  <h></h>;
+                  togglePopup();
                 }}
               >
                 Pay Rs. 895.00
@@ -196,6 +203,19 @@ function Payment() {
           />
         </div>
       </div>
+      {isOpen && (
+        <OrderCompletePopup
+          onClose={togglePopup}
+          content={
+            <div>
+              <img
+                src="https://c.tenor.com/0AVbKGY_MxMAAAAM/check-mark-verified.gif"
+                alt=""
+              />
+            </div>
+          }
+        />
+      )}
     </>
   );
 }
