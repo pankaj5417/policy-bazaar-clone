@@ -3,20 +3,11 @@ import "./ReviewDetail.css";
 import { motion, useAnimation } from "framer-motion";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
-  TextField,
+  
   FormControlLabel,
   Checkbox,
-  FormLabel,
-  FormControl,
-  RadioGroup,
-  Radio,
-  InputLabel,
-  Select,
-  MenuItem,
-  Stepper,
-  Step,
-  StepLabel,
-  Typography,
+  
+ 
   Button,
 } from "@material-ui/core";
 
@@ -88,8 +79,8 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
   };
   const [formValues, setFormValues] = useState(initialValues);
   */
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+  //const [formErrors, setFormErrors] = useState({});
+  //const [isSubmit, setIsSubmit] = useState(false);
   const [data,setData]=useState([])
 /*
   const handleChange = (e) => {

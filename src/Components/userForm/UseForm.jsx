@@ -5,15 +5,12 @@ import { Navigate, useParams } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion"
 import { makeStyles,useTheme } from '@material-ui/core/styles';
 import {TextField,
-    FormControlLabel,
-    Checkbox,
-    FormLabel,
+    
     FormControl,
-    RadioGroup,
-    Radio,
+    
     InputLabel,
     Select,
-    MenuItem,
+    
     Stepper,
     Step,
     StepLabel,
@@ -22,18 +19,18 @@ import {TextField,
 import { UseForm2 } from "./UseForm2";
 import UserForm from "./UserForm";
 import { UpgradeOption } from "./UpgradeOption";
-import { ReviewDetails } from "./reviewDetails";
+//import { ReviewDetails } from "./reviewDetails";
 import Navbar from "./navbar";
 
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+//import { useForm } from "react-hook-form";
+//import { Link } from "react-router-dom";
 
     function UseForm() {
 
         const initialValues = { username: "", email: "", income: "",occupation:"",education:"",lifeCover:"",CoverFor:"" ,paymentMode:"",pincode:"",city:"",nationality:"",medicalhistory:"",planOptions:""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
+ const [isSubmit, setIsSubmit] = useState(false);
 //   const { step, navigation } = useStep({
 //     steps,
 //     initialStep: 0,
@@ -83,7 +80,7 @@ const props = { formValues,setFormValues,handleChange };
         }))
 
     const classes = useStyles();
-    const theme = useTheme();
+   // const theme = useTheme();
 
     const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;

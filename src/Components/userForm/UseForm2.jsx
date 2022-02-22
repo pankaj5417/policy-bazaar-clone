@@ -5,31 +5,23 @@ import { motion, useAnimation } from "framer-motion"
 import { makeStyles,useTheme } from '@material-ui/core/styles';
 import {TextField,
     FormControlLabel,
-    Checkbox,
-    FormLabel,
+   
     FormControl,
     RadioGroup,
     Radio,
     InputLabel,
     Select,
-    MenuItem,
-    Stepper,
-    Step,
-    StepLabel,
-    Typography,
-    Button,} from '@material-ui/core';
+    
+   } from '@material-ui/core';
 
     import {
-        useForm,
-        Controller,
-        FormProvider,
-        useFormContext,
+        
       } from "react-hook-form";
 
 import React from 'react';
 
 export const UseForm2=({formValues,setFormValues,handleChange})=> {
-    const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+    //const {username,email,income,occupation,education,lifeCover,CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
     console.log(formValues)
     
 
@@ -69,7 +61,7 @@ export const UseForm2=({formValues,setFormValues,handleChange})=> {
         }))
 
     const classes = useStyles();
-    const theme = useTheme();
+    //const theme = useTheme();
 
     const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;

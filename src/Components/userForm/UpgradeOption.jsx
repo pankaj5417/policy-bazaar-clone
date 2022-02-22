@@ -3,34 +3,24 @@ import { useState, useEffect } from "react";
 import "./UseForm.css";
 import { motion, useAnimation } from "framer-motion"
 import { makeStyles,useTheme } from '@material-ui/core/styles';
-import {TextField,
+import {
     FormControlLabel,
-    Checkbox,
-    FormLabel,
-    FormControl,
+    
     RadioGroup,
     Radio,
-    InputLabel,
-    Select,
-    MenuItem,
-    Stepper,
-    Step,
-    StepLabel,
-    Typography,
-    Button,} from '@material-ui/core';
+    
+    } from '@material-ui/core';
     import {
-        useForm,
-        Controller,
-        FormProvider,
-        useFormContext,
+        
       } from "react-hook-form";
 
 import React from 'react';
 
 export const UpgradeOption=({formValues,setFormValues,handleChange})=> {
 
-    const {username,email, income,occupation, education,lifeCover, CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
-console.log(formValues)
+   // const {username,email, income,occupation, education,lifeCover, CoverFor,pincode,city,nationality,medicalhistory,planOptions}=formValues
+
+   console.log(formValues)
 
     const useStyles = makeStyles((theme) => ({
         inputField: {
