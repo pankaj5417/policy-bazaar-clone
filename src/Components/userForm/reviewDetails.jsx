@@ -65,6 +65,7 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
       },
     },
   };
+  const port=process.env.PORT||3001
 
   const control = useAnimation();
 /*
@@ -95,7 +96,7 @@ getFormData()
 },[])
 
     const getFormData=()=>{
-    fetch(`http://localhost:3001/userDetails `)
+    fetch(`http://localhost:${port}/userDetails `)
     .then((d)=>d.json()).then((res)=>{
         console.log(res)
         setData(res)

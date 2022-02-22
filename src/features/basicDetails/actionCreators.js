@@ -23,10 +23,11 @@ export const basicDetailsIsError = (e) => {
     payload: e,
   };
 };
+const port=process.env.PORT||3001
 
 export const postBasicDetails = (userData) => (dispatch) => {
   try {
-    fetch(`http://localhost:3001/basicDetails`, {
+    fetch(`http://localhost:${port}/basicDetails`, {
       method: "PATCH",
       body: JSON.stringify(userData),
       headers: {
@@ -45,7 +46,7 @@ export const getBasicDetails = (userData) => (dispatch) => {
   try {
     dispatch(basicDetailsIsLoading());
 
-    fetch(`http://localhost:3001/basicDetails`)
+    fetch(`http://localhost:${port}/basicDetails`)
       .then((e) => e.json())
       .then((res) => {
         dispatch(basicDetailsIsSuccess(res));
