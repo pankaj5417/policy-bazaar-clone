@@ -14,8 +14,6 @@ import {
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
 import { JSON_API } from "../../constants";
-require("dotenv").config()
-const api=process.env.JSON_API
 
 export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
 

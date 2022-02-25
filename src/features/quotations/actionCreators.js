@@ -5,7 +5,6 @@ import {
   QUOTES_ISSUCCESS,
 } from "./actionTypes";
 
-require('dotenv').configs();
 
 export const quotesIsLoading = () => {
   return {

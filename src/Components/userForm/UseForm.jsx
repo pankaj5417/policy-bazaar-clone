@@ -22,8 +22,6 @@ import { UpgradeOption } from "./UpgradeOption";
 //import { ReviewDetails } from "./reviewDetails";
 import Navbar from "./navbar";
 import { JSON_API } from "../../constants";
-require("dotenv").config()
-const api=process.env.JSON_API
 
 //import { useForm } from "react-hook-form";
 //import { Link } from "react-router-dom";
