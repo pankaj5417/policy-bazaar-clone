@@ -13,6 +13,7 @@ import {
 
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
+import { JSON_API } from "../../constants";
 require("dotenv").config()
 const api=process.env.JSON_API
 
@@ -98,7 +99,7 @@ getFormData()
 },[])
 
     const getFormData=()=>{
-    fetch(`${api}/userDetails `)
+    fetch(`${JSON_API}/userDetails `)
     .then((d)=>d.json()).then((res)=>{
         console.log(res)
         setData(res)

@@ -1,8 +1,10 @@
+import { JSON_API } from "../../constants";
 import {
   QUOTES_ISERROR,
   QUOTES_ISLOADING,
   QUOTES_ISSUCCESS,
 } from "./actionTypes";
+
 require('dotenv').configs();
 
 export const quotesIsLoading = () => {
@@ -24,14 +26,14 @@ export const quotesIsError = (e) => {
     payload: e,
   };
 };
-const api=process.env.JSON_API
+
 export const getQuotesData = (range) => (dispatch) => {
   try {
     dispatch(quotesIsLoading());
 
     let sortType = range.claimsSettled ? "asc" : "desc";
     fetch(
-      `${api}/quotesData?lifeCover_lte=${range.lifeCover}&coverage_lte=${range.coverage}&_sort=claimsSettled&_order=${sortType}`
+      `${JSON_API}/quotesData?lifeCover_lte=${range.lifeCover}&coverage_lte=${range.coverage}&_sort=claimsSettled&_order=${sortType}`
     )
       .then((e) => e.json())
       .then((res) => {

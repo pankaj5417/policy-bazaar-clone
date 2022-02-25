@@ -21,6 +21,7 @@ import UserForm from "./UserForm";
 import { UpgradeOption } from "./UpgradeOption";
 //import { ReviewDetails } from "./reviewDetails";
 import Navbar from "./navbar";
+import { JSON_API } from "../../constants";
 require("dotenv").config()
 const api=process.env.JSON_API
 
@@ -180,7 +181,7 @@ const [activeStep, setActiveStep] = useState(0);
 const addFormData=()=>{
     const payload=formValues
         
-     fetch(`${api}/userDetails`,{
+     fetch(`${JSON_API}/userDetails`,{
         method:"POST",
         body:JSON.stringify(payload),
         headers:{
