@@ -1,1 +1,1 @@
-export const JSON_API='https://policybaazar3.herokuapp.com/'
+export const JSON_API='https://policybaazar3.herokuapp.com/db'
