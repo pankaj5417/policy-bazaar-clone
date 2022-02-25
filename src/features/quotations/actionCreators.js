@@ -3,6 +3,7 @@ import {
   QUOTES_ISLOADING,
   QUOTES_ISSUCCESS,
 } from "./actionTypes";
+require('dotenv').configs();
 
 export const quotesIsLoading = () => {
   return {
@@ -23,14 +24,14 @@ export const quotesIsError = (e) => {
     payload: e,
   };
 };
-const port=process.env.PORT||3001
+const api=process.env.JSON_API
 export const getQuotesData = (range) => (dispatch) => {
   try {
     dispatch(quotesIsLoading());
 
     let sortType = range.claimsSettled ? "asc" : "desc";
     fetch(
-      `http://localhost:${port}/quotesData?lifeCover_lte=${range.lifeCover}&coverage_lte=${range.coverage}&_sort=claimsSettled&_order=${sortType}`
+      `${api}/quotesData?lifeCover_lte=${range.lifeCover}&coverage_lte=${range.coverage}&_sort=claimsSettled&_order=${sortType}`
     )
       .then((e) => e.json())
       .then((res) => {

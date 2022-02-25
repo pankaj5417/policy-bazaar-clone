@@ -13,6 +13,8 @@ import {
 
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
+require("dotenv").config()
+const api=process.env.JSON_API
 
 export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
 
@@ -96,7 +98,7 @@ getFormData()
 },[])
 
     const getFormData=()=>{
-    fetch(`http://localhost:${port}/userDetails `)
+    fetch(`${api}/userDetails `)
     .then((d)=>d.json()).then((res)=>{
         console.log(res)
         setData(res)

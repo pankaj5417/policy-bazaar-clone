@@ -21,6 +21,8 @@ import UserForm from "./UserForm";
 import { UpgradeOption } from "./UpgradeOption";
 //import { ReviewDetails } from "./reviewDetails";
 import Navbar from "./navbar";
+require("dotenv").config()
+const api=process.env.JSON_API
 
 //import { useForm } from "react-hook-form";
 //import { Link } from "react-router-dom";
@@ -178,7 +180,7 @@ const [activeStep, setActiveStep] = useState(0);
 const addFormData=()=>{
     const payload=formValues
         
-     fetch("http://localhost:3001/userDetails",{
+     fetch(`${api}/userDetails`,{
         method:"POST",
         body:JSON.stringify(payload),
         headers:{
