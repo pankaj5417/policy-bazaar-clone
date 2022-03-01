@@ -122,7 +122,7 @@ function Payment() {
                   togglePopup();
                 }}
               >
-               {priceData}
+              ₹{priceData}
               </button>
             </div>
           </div>
@@ -178,7 +178,7 @@ function Payment() {
               </div>
               <div className="koko">
                 <p>Amount</p>
-                <p>Rs. 895</p>
+                <p>₹{priceData}</p>
               </div>
             </div>
             <div className="rg-b1" style={{ marginTop: "70px" }}></div>
@@ -187,7 +187,7 @@ function Payment() {
                 <p>Total Amount</p>
                 <p>(Inclusive GST)</p>
               </div>
-              <div>Rs. 895.00</div>
+          <div>₹{priceData}</div>
             </div>
           </div>
         </div>
