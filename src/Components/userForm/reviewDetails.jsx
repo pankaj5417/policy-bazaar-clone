@@ -91,6 +91,7 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
   };
 */
   
+const basicdata = JSON.parse(localStorage.getItem("basicUserDetails"));
 
 useEffect(()=>{
 getFormData()
@@ -239,11 +240,11 @@ console.log(data)
                 <ul>
                   <li>
                     <div class="review-Detail-left">Gender:</div>
-                    <div class="reviewFormRightDetail">Male</div>
+                    <div class="reviewFormRightDetail">{basicdata.gender}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Date of Birth:</div>
-                    <div class="reviewFormRightDetail">03/06/1994</div>
+                    <div class="reviewFormRightDetail">{basicdata.dob}</div>
                   </li>
                   <li>
                     <div class="review-Detail-left">Tobacco User:</div>
@@ -251,7 +252,7 @@ console.log(data)
                   </li>
                   <li>
                     <div class="review-Detail-left">Phone Number</div>
-                    <div class="reviewFormRightDetail">82******49</div>
+                    <div class="reviewFormRightDetail">{basicdata.mobile}</div>
                   </li>
                 </ul>
               </div>
@@ -335,7 +336,7 @@ console.log(data)
 
             <div className="bottom-container">
               <div className="total-premium">
-                <h3>Total Premium</h3>
+                <h3>Total Premium</h3>&nbsp;&nbsp;<span>₹490</span>
               </div>
 
               <div className="checkout-btn">

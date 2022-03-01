@@ -452,7 +452,7 @@ const handleData=(e)=>{
                  transition:{duration:2}
                 })}}>
                   <div className="total-amount-container">
-                <span className=" ">Total Amount</span><span>₹490</span>
+                <span className=" ">Total Amount</span>
 
                   </div>
                   <div className="button-container">
