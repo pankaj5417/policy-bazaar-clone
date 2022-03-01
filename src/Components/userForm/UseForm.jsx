@@ -22,6 +22,7 @@ import { UpgradeOption } from "./UpgradeOption";
 //import { ReviewDetails } from "./reviewDetails";
 import Navbar from "./navbar";
 import { JSON_API } from "../../constants";
+import { useSelector } from "react-redux";
 
 //import { useForm } from "react-hook-form";
 //import { Link } from "react-router-dom";
@@ -175,10 +176,18 @@ const [activeStep, setActiveStep] = useState(0);
     })
 }
 */
+const { loading, err, data } = useSelector((state) => ({
+  loading: state.quotes.isLoading,
+  err: state.quotes.isError,
+  data: state.quotes.quotes,
+}));
+
+
+const basicdata = JSON.parse(localStorage.getItem("basicUserDetails"));
   
 const addFormData=()=>{
     const payload=formValues
-        
+ 
      fetch(`${JSON_API}/userDetails`,{
         method:"POST",
         body:JSON.stringify(payload),
@@ -239,8 +248,8 @@ const handleData=(e)=>{
 
      <div className="form-heading">
        <div>
-       <span>Male</span>&nbsp;<span>|</span>&nbsp;<span>D O B:</span>&nbsp;
-       <span>03/06/1994</span>&nbsp;<span>|</span>&nbsp;<span>No Smoker</span>&nbsp;<span>|</span>&nbsp;<span>Phone no.</span>
+       <span>{basicdata.gender}</span>&nbsp;<span>|</span>&nbsp;<span>D O B:</span>&nbsp;
+       <span>{basicdata.dob}</span>&nbsp;<span>|</span>&nbsp;<span>No Smoker</span>&nbsp;<span>|</span>&nbsp;<span>Phone no.</span>|&nbsp;<span>{basicdata.mobile}</span>
       
 
        </div>
@@ -443,7 +452,7 @@ const handleData=(e)=>{
                  transition:{duration:2}
                 })}}>
                   <div className="total-amount-container">
-                <span className=" ">Total Amount</span>
+                <span className=" ">Total Amount</span><span>₹490</span>
 
                   </div>
                   <div className="button-container">
