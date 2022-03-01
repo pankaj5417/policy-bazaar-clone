@@ -337,7 +337,8 @@ console.log(data)
 
             <div className="bottom-container">
               <div className="total-premium">
-                <h3>Total Premium&bsp;</h3><span>₹{priceData}</span>
+                <h3>Total Premium</h3>
+                <p>₹{priceData}</p>
               </div>
 
               <div className="checkout-btn">

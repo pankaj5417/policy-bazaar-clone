@@ -1,6 +1,7 @@
 import "./Navbar.css";
 import { useState } from "react";
 import { Dropdown } from "./Dropdown";
+import { Link } from "@material-ui/core";
 function Navbar() {
   const [state, setState] = useState(false);
 
@@ -10,6 +11,7 @@ function Navbar() {
   return (
     <>
       <div className="navbar">
+        <Link to={`/`}>
         <div>
           <img
             className="logo-s"
@@ -17,6 +19,7 @@ function Navbar() {
             alt="logo"
           />
         </div>
+        </Link>
         <div className="navbar-insu" onMouseOver={display}>
           <p>Insurance Products</p>
           <svg
