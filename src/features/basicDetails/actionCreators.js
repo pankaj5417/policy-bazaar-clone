@@ -1,3 +1,5 @@
+import { JSON_API } from "../../constants";
+
 import {
   BASIC_DETAILS_ERROR,
   BASIC_DETAILS_LOADING,
@@ -27,7 +29,7 @@ const port=process.env.PORT||3001
 
 export const postBasicDetails = (userData) => (dispatch) => {
   try {
-    fetch(`http://localhost:${port}/basicDetails`, {
+    fetch(`${JSON_API}/basicDetails`, {
       method: "PATCH",
       body: JSON.stringify(userData),
       headers: {
@@ -46,7 +48,7 @@ export const getBasicDetails = (userData) => (dispatch) => {
   try {
     dispatch(basicDetailsIsLoading());
 
-    fetch(`http://localhost:${port}/basicDetails`)
+    fetch(`${JSON_API}/basicDetails`)
       .then((e) => e.json())
       .then((res) => {
         dispatch(basicDetailsIsSuccess(res));
