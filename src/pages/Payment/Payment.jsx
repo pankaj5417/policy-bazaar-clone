@@ -15,7 +15,9 @@ function Payment() {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-
+  const basicdata = JSON.parse(localStorage.getItem("basicUserDetails"));
+  const priceData = JSON.parse(localStorage.getItem("priceData"));
+  
   return (
     <>
       <Navbar />
@@ -120,7 +122,7 @@ function Payment() {
                   togglePopup();
                 }}
               >
-                Pay Rs. 895.00
+               {priceData}
               </button>
             </div>
           </div>

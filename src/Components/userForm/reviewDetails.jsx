@@ -92,6 +92,7 @@ export const ReviewDetails = ({formValues,setFormValues,handleChange}) => {
 */
   
 const basicdata = JSON.parse(localStorage.getItem("basicUserDetails"));
+const priceData = JSON.parse(localStorage.getItem("priceData"));
 
 useEffect(()=>{
 getFormData()
@@ -336,7 +337,7 @@ console.log(data)
 
             <div className="bottom-container">
               <div className="total-premium">
-                <h3>Total Premium</h3>&nbsp;&nbsp;<span>₹490</span>
+                <h3>Total Premium</h3>&nbsp;&nbsp;<div>{priceData}</div>
               </div>
 
               <div className="checkout-btn">

@@ -2,6 +2,10 @@ import("./PlanCard.css");
 
 export const PlanCard = (data) => {
   console.log("paymonthly", data.payMonthly);
+  
+  const handlePrice=(priceData)=>{
+    localStorage.setItem("priceData",JSON.stringify(priceData))
+  }
 
   return (
     <>
@@ -43,7 +47,7 @@ export const PlanCard = (data) => {
           <h6>{data.claimsSettled}%</h6>
         </div>
 
-        <div className="price">
+        <div className="price" onClick={()=>handlePrice(data.monthly)}>
           <div
             className="priceBtn"
             onClick={() => {
