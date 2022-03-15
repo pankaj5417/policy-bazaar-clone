@@ -103,6 +103,7 @@ const control=useAnimation()
       console.log(formValues);
     }
   }, [formErrors]);
+
   const validate = (values) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -133,6 +134,7 @@ const control=useAnimation()
             id="standard-basic" 
             label="Pincode"
               type="text"
+              required={true}
               name="pincode"
              // placeholder="Full Name as per your ID Proof"
               value={formValues.pincode}
@@ -147,6 +149,7 @@ const control=useAnimation()
           <FormControl  className={classes.formControl}>
 
             <TextField
+             required={true}
             id="standard-basic" 
             label="City"
               type="text"
@@ -163,7 +166,7 @@ const control=useAnimation()
 
           <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Nationality</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps} name="nationality" id="nationality">
+            <Select  required={true}  onChange={handleChange}  MenuProps={MenuProps} name="nationality" id="nationality">
                 <option value="" selected>Nationality</option>
                 <option value="residentIndian">Resident Indian</option>
                
@@ -178,7 +181,7 @@ const control=useAnimation()
                   </FormControl>
                   <br />
                   
-                  <RadioGroup  className={classes.formControl} name="medicalhistory" style={{display:"inline"}} onChange={handleChange}>
+                  <RadioGroup  required={true} className={classes.formControl} name="medicalhistory" style={{display:"inline"}} onChange={handleChange}>
                       
 
              <FormControlLabel  value="yes" control={<Radio />} label="Yes" />

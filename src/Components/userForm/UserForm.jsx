@@ -124,30 +124,7 @@ const MenuProps = {
   <div>
      
      <div className="field">
-{/*
-     <Controller
-      //  control={control2}
-        name="username"
-        render={({ field }) => (
-            <FormControl  className={classes.formControl}>
-
-            <TextField
-            id="standard-basic" 
-            label="Full Name as per your ID Proof"
-              type="text"
-              
-              required
-             // placeholder="Full Name as per your ID Proof"
-              value={formValues.username}
-              onChange={handleChange}
-              {...field}
-            />
-            </FormControl>
-        )}
-      />
-      </div>
-      */}
-        
+       
      <FormControl  className={classes.formControl}>
 
             <TextField
@@ -155,7 +132,7 @@ const MenuProps = {
             label="Full Name as per your ID Proof"
               type="text"
               name="username"
-              required
+              required={true}
              // placeholder="Full Name as per your ID Proof"
               value={username}
               onChange={handleChange}
@@ -175,7 +152,7 @@ const MenuProps = {
             label="Email Address"
               type="text"
               name="email"
-              required
+              required={true}
              // placeholder="Email Address"
               value={email}
               onChange={handleChange}
@@ -192,7 +169,7 @@ const MenuProps = {
             label="Annual Income"
               type="number"
               name="income"
-              required
+              required={true}
              // placeholder="Annual Income"
               value={income}
               onChange={handleChange}
@@ -204,7 +181,7 @@ const MenuProps = {
           
           <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Occupation</InputLabel>
-            <Select required onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
+            <Select required={true} onChange={handleChange}  MenuProps={MenuProps} name="Occupation" id="occupation">
                 <option value="" selected>Occupation</option>
                 <option value="salaried">Salaried</option>
                 <option value="self-employed">Self Employed</option>
@@ -217,7 +194,7 @@ const MenuProps = {
                
                 <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Education</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="Education" id="education">
+            <Select  required={true}  onChange={handleChange}  MenuProps={MenuProps}  name="Education" id="education">
                 <option disabled value="" selected>Education</option>
                 <option value="postgraduate">Post-Graduate & Above</option>
                 <option value="12th">12th</option>

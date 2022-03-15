@@ -38,6 +38,9 @@ import { useSelector } from "react-redux";
 //     initialStep: 0,
 //   });
 
+const basicdata = JSON.parse(localStorage.getItem("basicUserDetails"));
+const priceData = JSON.parse(localStorage.getItem("priceData"));
+
 const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
@@ -165,17 +168,7 @@ const [activeStep, setActiveStep] = useState(0);
   const control=useAnimation()
 
 
- /* useEffect(()=>{
-    getFormData()
-},[])
-   
-    const getFormData=()=>{
-    fetch(`http://localhost:3003/userDetails `)
-    .then((d)=>d.json()).then((res)=>{
-        setFormValues(res)
-    })
-}
-*/
+ 
 const { loading, err, data } = useSelector((state) => ({
   loading: state.quotes.isLoading,
   err: state.quotes.isError,
@@ -183,7 +176,6 @@ const { loading, err, data } = useSelector((state) => ({
 }));
 
 
-const basicdata = JSON.parse(localStorage.getItem("basicUserDetails"));
   
 const addFormData=()=>{
     const payload=formValues
@@ -280,7 +272,7 @@ const handleData=(e)=>{
           labelId="demo-mutiple-name-label"
           id="demo-mutiple-name"
           name="lifeCover"
-          
+          required={true}
           value={formValues.lifeCover}
           onChange={handleChange}
           MenuProps={MenuProps}
@@ -321,7 +313,7 @@ const handleData=(e)=>{
           labelId="demo-mutiple-name-label"
           id="demo-mutiple-name"
           name="CoverFor"
-          
+          required={true}
           value={formValues.CoverFor}
           onChange={handleChange}
           MenuProps={MenuProps}
@@ -362,7 +354,7 @@ const handleData=(e)=>{
      
         <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Pay For</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="payFor" >
+            <Select  required={true} onChange={handleChange}  MenuProps={MenuProps}  name="payFor" >
                 <option disabled value="" selected>Education</option>
                 <option value="onetime">One Time</option>
                 <option value="5years">5 Years</option>
@@ -375,7 +367,7 @@ const handleData=(e)=>{
 
             <FormControl  className={classes.formControl}>
         <InputLabel id="demo-mutiple-checkbox-label">Mode of Premium Payment</InputLabel>
-            <Select  onChange={handleChange}  MenuProps={MenuProps}  name="paymentMode" >
+            <Select  required={true} onChange={handleChange}  MenuProps={MenuProps}  name="paymentMode" >
                 <option value="monthly">Monthly</option>
                 <option value="yearly">Yearly</option>
                 
@@ -452,8 +444,8 @@ const handleData=(e)=>{
                  transition:{duration:2}
                 })}}>
                   <div className="total-amount-container">
-                <span className=" ">Total Amount</span>
-
+                <h4 className=" ">Total Amount</h4>
+                <p>₹{priceData}</p>
                   </div>
                   <div className="button-container">
                   <Button
